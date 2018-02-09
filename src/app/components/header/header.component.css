@@ -1,0 +1,7 @@
+.menu-container { width: 100%; background-color: #fffdf6; height: 60px; display: inline-block; }
+.menu-container h2 { margin: 0px; color: #929265; font-family: 'Josefin Slab', serif; float: left; padding: 0px 30px; line-height: 60px; }
+.menu-container .farmer { margin: 0px; color: #e0e0c9; font-size: 12px; font-weight: normal; letter-spacing: 2px; float: left; }
+.menu-container .farmer li { line-height: 60px; float: left; color: #929265; padding: 0px 15px 0px 0px; }
+.menu-container .farmer .farmer-img img { position: relative; top: 10px; width: 42px; border-radius: 50%; }
+.menu-container .menu { margin: 0px; color: #e0e0c9; font-size: 12px; font-weight: normal; letter-spacing: 2px; float: right; }
+.menu-container .menu li { line-height: 60px; float: left; color: #929265; padding: 0px 38px 0px 0px; cursor:pointer; }

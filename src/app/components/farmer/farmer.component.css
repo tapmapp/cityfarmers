@@ -1,0 +1,61 @@
+.profile-container { float: left; width: 20%; }
+.profile-container .farmer-info { font-family: 'Josefin Slab', serif; margin: 30px 0px 0px 50px; }
+.profile-container .farmer-info .img { margin: 0px 0px 30px 0px; }
+.profile-container .farmer-info .info { padding: 0px 60px; color: #929265; line-height: 24px; font-size: 18px; font-weight: bold; }
+
+.farms-container { float: left; width: 55%; }
+.farms-container h2 { margin: 30px 0px 30px 0px; }
+.farms-container .farm span { display: inline-block; width: 55px; text-align: right; }
+.farms-container .farm .name { width: 100px; }
+.farms-container .farm .mins { display: inline-block; width: 70px;}
+.farms-container .create-farm-container { width: 220px; }
+.farms-container .create-farm-container h2 { margin: 30px 0px 0px 0px; }
+.farms-container .create-farm-container ul { margin: 0px; }
+.farms-container .create-farm-container input { border: 1px solid #e6e4d1; border-radius: 5px; line-height: 36px; width: 200px; padding: 0px 10px;}
+.farms-container .create-farm-container input:focus { outline: -webkit-focus-ring-color auto 0px; }
+.farms-container .create-farm-container label { font-size: 12px; padding: 0px 10px; position: relative; top: 27px; transition: 1s; color: #797979; }
+.farms-container .create-farm-container label.active { top: 0px; font-size: 10px; }
+.farms-container .create-farm-container .create-farm { display: inline-block; background-color: #929265; color: #f1f1d0; padding: 8px 14px; border-radius: 3px;font-size: 12px; float: right; margin: 15px 0px; cursor: pointer; }
+
+.farm ul { border: 1px solid #c5c1a3; background-image: url('/assets/img/wood-background.png'); height: 60px; border-radius: 5px; padding: 0px 0px 0px 25px; display: inline-block; margin: 0px 0px 10px 0px; } 
+.farm ul li { float: left; color: #808058; height: 60px; font-size: 21px; font-weight: bold; line-height: 60px; padding: 0px 25px 0px 0px;}
+.farm ul li .fan { width: 19px; position: relative; top: 1px; }
+.farm ul li .watering { width: 17px; position: relative; top: 2px; }
+.farm ul .connection { font-size: 21px; }
+.farm ul .name { font-size: 16px; }
+
+.history-container { float: left; width: 25%; }
+.history-container h2 { padding: 0px 60px 0px 30px; }
+.history-container h2 ul { float: right; margin: 0px; }
+.history-container h2 ul li { float: right; width: 25px; text-align: right; }
+.history-container h2 ul li i { font-size: 16px; cursor: pointer; }
+
+.history-container .notes-container { height: 75vh; border-left: 1px solid #ccc; overflow-y: scroll; display: none; } 
+.history-container .notes-container.active { display: inherit; }
+
+.history-container .add-note-container { margin: 30px 60px 0px 30px; display: none; height: 75vh; border-left: 1px solid #ccc;}
+.history-container .add-note-container.active { display: inherit; }
+.history-container .add-note-container .add-note  { margin: 10px 60px 10px 30px; }
+.history-container .add-note-container .add-note h2 { padding: 0px; margin: 0px; }
+.history-container .add-note-container .add-note ul { margin: 0px; }
+.history-container .add-note-container .add-note input { border: 1px solid #e6e4d1; border-radius: 5px; line-height: 36px; width: 200px; padding: 0px 10px; }
+.history-container .add-note-container .add-note textarea { display: inline-block; border-radius: 5px; width: 92%; border: 1px solid #e6e4d1; height: 50px; padding: 8px 12px; line-height: 16px; color: #808080; }
+.history-container .add-note-container .add-note label { font-size: 12px; padding: 0px 10px; position: relative; top: 27px; transition: 1s; color: #797979; }
+.history-container .add-note-container .add-note label.active { top: 0px; font-size: 10px; }
+.history-container .add-note-container .add-note .submit { display: inline-block; background-color: #929265; color: #f1f1d0; padding: 8px 14px; border-radius: 3px; font-size: 12px; float: right; margin: 15px 0px; cursor: pointer; }
+
+.history-container .select-farm-container { float: right; margin: 0px 15px; }
+.history-container .select-farm-container .active-farm { font-size: 12px; font-family: 'Arial'; font-weight: normal; color: #808080; padding: 0px 10px 0px 10px; width: 100px; line-height: 24px; cursor: pointer; border: 1px solid #867979; }
+.history-container .select-farm-container .active-farm i {float: right; line-height: 24px; }
+.history-container .select-farm-container .farms-list { display: none; }
+.history-container .select-farm-container .farms-list.active { position: absolute; display: inherit; border-left: 1px solid #867979; border-right: 1px solid #867979; }
+.history-container .select-farm-container .farms-list .farm { font-size: 12px; font-family: 'Arial'; font-weight: normal; color: #808080; line-height: 24px; width: 100px; background-color: #fffdf6; padding: 0px 10px; border-bottom: 1px solid #808080; cursor: pointer; }
+.history-container .select-farm-container .farms-list .farm:hover { background-color: rgb(194, 194, 194); }
+
+.notes-container .note { display: inline-block; margin: 10px 60px 10px 30px;}
+.notes-container .note .date { font-size: 12px; color: #808058; line-height: 17px; margin: 10px 0px; text-align: right;}
+.notes-container .note .date i {padding: 0px 3px 0px 0px; }
+.notes-container .note .content h2 { font-size: 18px; padding: 0px; margin: 0px 0px 8px 0px; }
+.notes-container .note .content p { color: #797979; font-size: 12px; margin: 0px 0px 15px 0px; line-height: 16px; }
+.notes-container .note .content img { width: 100%; font-size: 12px; }
+

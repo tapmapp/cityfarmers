@@ -1,0 +1,183 @@
+<socket></socket>
+<header></header>
+<div class="profile-container">
+    <ul *ngFor="let farmer of farmer" class="farmer-info">
+        <li class="img">
+            <img src="/assets/img/{{ farmer._id }}.png">
+        </li>
+        <li class="info">
+            {{ farmer.name }}
+        </li>
+        <li class="info">
+            {{ farmer.birth }}
+        </li>
+        <li class="info">
+            {{ farmer.city }}, {{ farmer.country}}
+        </li>
+    </ul>
+</div>
+<div class="farms-container">
+    <h2>My Farms</h2>
+    <div *ngFor="let farm of farms" class="farm">
+        <a [routerLink]="['/farm', farm._id]">
+            <ul>
+                <li class="name">{{farm.name}}</li>
+                <li><i class="fa fa-thermometer-half" aria-hidden="true"></i> <span>{{ farm.temperature }} ºC</span></li>
+                <li><i class="fa fa-tint" aria-hidden="true"></i> <span>{{ farm.humidity }} %</span></li>
+                <li><i class="fa fa-sun-o" aria-hidden="true"></i> {{ farm.lightingOn }}</li>
+                <li><i class="fa fa-moon-o" aria-hidden="true"></i> {{ farm.lightingOff }}</li>
+                <li><img src="/assets/img/fan.png" class="fan"> <span>{{ farm.temperatureVent }} ºC</span></li>
+                <li><img src="/assets/img/watering-icon.png" class="watering"> <span class="mins">{{ farm.watering }} min</span></li>
+                <li class="connection"><i class="fa fa-wifi" aria-hidden="true"></i></li>
+            </ul>
+        </a>
+    </div>
+
+    <div class="create-farm-container">
+        <h2>Create Farm</h2>
+        <ul>
+            <li>
+                <label [ngClass]="{'active': activeFarmName }">Farm name</label>
+                <br/>
+                <input type="text" [(ngModel)]="farmName" (focus)="focusFarmName()" (focusout)="focusOutFarmName()">
+            </li>
+            <li>
+                <label [ngClass]="{'active': activeCity }">City</label>
+                <br/>
+                <input type="text" [(ngModel)]="farmCity" (focus)="focusCity()" (focusout)="focusOutCity()">
+            </li>
+            <li>
+                <label [ngClass]="{'active': activeCountry }">Country</label>
+                <br/>
+                <input type="text" [(ngModel)]="farmCountry" (focus)="focusCountry()" (focusout)="focusOutCountry()">
+            </li>
+            <li (click)="createFarm()">
+                <span class="create-farm">
+                    Create
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="history-container">
+    <h2>Farm notes
+        <ul>
+            <li><i class="fa fa-pencil-square-o" aria-hidden="true" (click)="addNote()"></i></li>
+            <li><i class="fa fa-align-justify" aria-hidden="true" (click)="showNotes()"></i></li>
+        </ul>
+        <div class="select-farm-container">
+            <div class="active-farm" (click)="displayFarms()">{{ selectedfarmName }} <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="farms-list" [ngClass]="{'active': farmListState}">
+                <div class="farm" *ngFor="let farm of farms" (click)="selectFarm(farm._id)">
+                    {{farm.name}}
+                </div>
+            </div>
+        </div>
+    </h2>
+    <div class="notes-container" [ngClass]="{'active': noteContainerStatus }">
+
+        <div class="note">
+            <div class="content">
+                <h2>Setting up the Raspberry Pi</h2>
+                <p>
+                    Configuring and implementing the different functionalities of the Raspberry.
+                </p>
+                <img src="/assets/img/raspberry.jpg">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>01:10 AM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>10-01-2018
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="content">
+                <h2>Work, work, work...</h2>
+                <p>
+                    Coding the platform with Angular 4 and the REST Api with Express and Mongoose.
+                </p>
+                <img src="/assets/img/work.png">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>03:10 AM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>11-01-2018
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="content">
+                <h2>Building the lamp</h2>
+                <p>
+                    Everything can be done with a little work
+                </p>
+                <img src="/assets/img/build-1.jpg">
+                <img src="/assets/img/build-2.jpg">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>12:10 PM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>12-01-2018
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="content">
+                <h2>Installation</h2>
+                <p>
+                    All work and no play makes Jack a dull boy
+                </p>
+                <img src="/assets/img/installation.jpg">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>12:12 PM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>12-01-2018
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="content">
+                <h2>Green house working!</h2>
+                <p>
+                    First day testing the green house.
+                    <br/>
+                    After two weeks of hard work finally we can see some beautiful results!
+                </p>
+                <img src="/assets/img/green-house.jpg">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>13:10 PM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>13-01-2018
+            </div>
+        </div>
+        <div class="note">
+            <div class="content">
+                <h2>Testing the sensors!</h2>
+                <p>
+                    We want to make sure the sensors work properly and we receive the information correctly.
+                    <br/>
+                    We should find a nice place for placing the sensors. We dont want to break them when we water the plants.
+                </p>
+                <img src="/assets/img/green-house-2.jpg">
+            </div>
+            <div class="date">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>13:40 PM &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>13-01-2018
+            </div>
+        </div>
+    </div>
+    <div class="add-note-container" [ngClass]="{'active': addNoteStatus }">
+        <div class="add-note">
+            <h2>Add Note</h2>
+            <ul>
+                <li>
+                    <label [ngClass]="{'active': activeTitle }">Title</label>
+                    <br/>
+                    <input type="text" [(ngModel)]="noteTitle" (focus)="focusNoteTitle()" (focusout)="focusOutNoteTitle()">
+                </li>
+                <li>
+                    <label [ngClass]="{'active': activeContent }">Content</label>
+                    <br/>
+                    <textarea [(ngModel)]="noteContent" (focus)="focusContent()" (focusout)="focusOutContent()"></textarea>
+                </li>
+                <li>
+                    <span class="submit">Add note</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="menu-container">
+    <h2>City Farmers</h2>
+    <ul class="farmer">
+        <li class="farmer-img"><a routerLink="/farmer"><img src="/assets/img/{{farmerId}}.png"></a></li>
+        <li><a routerLink="/farmer">{{ farmerName }}</a></li>
+    </ul>
+    <ul class="menu">
+        <li>home</li>
+        <li>farms</li>
+        <li>contact</li>
+        <li (click)="logOut()">log out</li>
+    </ul>
+</div>

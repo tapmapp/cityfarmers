@@ -1,0 +1,29 @@
+<div style="height:100%;">
+    <div class="loader-container" [ngClass]="{'active': loaderStatus }">
+        <div class="loader">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        </div>
+    </div>
+    <div class="chart-menu">
+        <ul class="chart-legend">
+            <li class="temperature"><i class="fa fa-square" aria-hidden="true"></i> Temperature</li>
+            <li class="humidity"><i class="fa fa-square" aria-hidden="true"></i> Humidity</li>
+        </ul>
+        <ul class="chart-period">
+            <li [ngClass]="{'active': selectedDataPeriod == 'days' }" (click)="selectPeriod('days')"><i class="fa fa-clock-o" aria-hidden="true"></i> Days</li>
+            <li [ngClass]="{'active': selectedDataPeriod == 'hours' }" (click)="selectPeriod('hours')"><i class="fa fa-clock-o" aria-hidden="true"></i> Hours</li>
+            <li [ngClass]="{'active': selectedDataPeriod == 'minutes' }" (click)="selectPeriod('minutes')"><i class="fa fa-clock-o" aria-hidden="true"></i> Minutes</li>
+        </ul>
+    </div>
+    <canvas baseChart 
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+<script src="node_modules/chart.js/src/chart.js"></script>

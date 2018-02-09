@@ -1,0 +1,45 @@
+<div class="login-container">
+    <div class="login-cell">
+        <div class="welcome">   
+            <h2>Welcome to</h2>
+            <h1>City Farmers</h1>
+        </div>
+        <div class="form" (keydown)="logIn($event)">
+            <ul>
+                <li>
+                    <label [ngClass]="{'active': activeEmail }">Email</label>
+                    <br/>
+                    <input type="email" [(ngModel)]="email" (focus)="focusEmail()" (focusout)="focusOutEmail()">
+                </li>
+                <li>
+                    <label [ngClass]="{'active': activePassword }">Password</label>
+                    <br/>
+                    <input type="password" [(ngModel)]="password" (focus)="focusPassword()" (focusout)="focusOutPassword()">
+                </li>
+                <li>
+                    <span class="log-in" (click)="logIn($event)" (keydown)="logIn($event)">Log In</span>
+                    <span *ngIf="error != ''" class="error"><i class="fa fa-bug" aria-hidden="true"></i> {{error}}</span>
+                </li>
+            </ul>
+        </div>
+            
+    </div>
+    
+</div>
+
+<!--
+<ul>
+    <li>Create Account</li>
+    <li>
+        <label>Email</label>
+        <br/>
+        <input type="email" [ngModel]="newEmail">
+    </li>
+    <li>
+        <label>Password</label>
+        <br/>
+        <input type="password" [ngModel]="newPassword">
+    </li>
+    <li (click)="createAccount()">Create Account</li>
+</ul>
+-->

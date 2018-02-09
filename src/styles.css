@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+body { background-color: #fffdf6; font-family: 'Arial'; margin: 0px; color: #333; }
+h1, h2 { font-family: 'Josefin Slab', serif; color: #929265; }
+ul { list-style: none; padding: 0px; }
+a { text-decoration: none; color: #333; }

@@ -1,0 +1,89 @@
+<socket></socket>
+<header></header>
+<div class="content-container">
+    <div class="chart-container">
+        <chart [farm]="farm"></chart>
+    </div>
+    <div class="farms-container" *ngFor="let farm of farm">
+
+        <div class="container farm-desc">
+            <h2>{{ farm.name }}</h2>
+            <ul>
+                <li><i class="fa fa-cube" aria-hidden="true"></i> {{ farm.system }}</li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{ farm.city }}</li>
+                <li><i class="fa fa-flag-checkered" aria-hidden="true"></i> 02/01/2018</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <ul class="farms">
+                <li><i class="fa fa-thermometer-half" aria-hidden="true"></i><span>{{ farm.temperature }} ºC</span></li>
+                <li><i class="fa fa-tint" aria-hidden="true"></i><span>{{ farm.humidity }} %</span></li>
+            </ul>
+        </div>
+
+        <div class="container lighting-desc">
+            <ul class="farms">
+                <li class="time">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i><span>{{ farm.lightingOn }}</span><span class="am-pm">AM</span>
+                    <ul class="control">
+                        <li (click)="addTimeOn(farm.lightingOn)"><i class="fa fa-plus" aria-hidden="true"></i></li>
+                        <li (click)="lowTimeOn(farm.lightingOn)"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                    </ul>
+                </li>
+                <li class="time">
+                    <i class="fa fa-moon-o" aria-hidden="true"></i><span>{{ farm.lightingOff }}</span><span class="am-pm">PM</span>
+                    <ul class="control">
+                        <li (click)="addTimeOff(farm.lightingOff)"><i class="fa fa-plus" aria-hidden="true"></i></li>
+                        <li (click)="lowTimeOff(farm.lightingOff)"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container ventilation-desc">
+            <ul class="farms">
+                <li class="fan">
+                    <img src="/assets/img/fan.png"> <span>{{ farm.temperatureVent }} ºC</span>
+                    
+                    <ul class="control on-off">
+                        <li (click)="switchFan(farm.name, true)" [ngClass]="{ 'active': fanStatus }">ON</li>
+                        <li (click)="switchFan(farm.name, false)" [ngClass]="{ 'active': !fanStatus }">AUTO</li>
+                    </ul>
+                    <ul class="control">
+                        <li (click)="temperatureUp()"><i class="fa fa-plus" aria-hidden="true"></i></li>
+                        <li (click)="temperatureDown()"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                    </ul>
+                    
+                </li>
+                <li class="watering">
+                    <img src="/assets/img/watering-icon.png"> 
+                    <span class="watering-period">
+                        <span>{{ farm.watering }}<span class="segs-min"> min</span></span>
+                    </span>
+                    <ul class="control on-off">
+                        <li (click)="switchWatering(farm.name, true)" [ngClass]="{ 'active': wateringStatus }">ON</li>
+                        <li (click)="switchWatering(farm.name, false)" [ngClass]="{ 'active': !wateringStatus }">AUTO</li>
+                    </ul>
+                    <ul class="control"> 
+                        <li (click)="wateringUp()"><i class="fa fa-plus" aria-hidden="true"></i></li>
+                        <li (click)="wateringDown()"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container time-desc">
+            <ul class="farms">
+                <li>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>{{ hours }}:{{ minutes }}
+                </li>
+                <li class="water-tank">
+                    <img src="/assets/img/water-deposit.png"><span>4 L</span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
