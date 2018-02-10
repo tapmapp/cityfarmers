@@ -54,8 +54,6 @@ export class ChartService {
 
                 if(chartData !== null) {
 
-                    console.log(chartData.length);
-
                     if(response.length > 0) {
 
                         for(let i = 0; i < response.length; i++) {

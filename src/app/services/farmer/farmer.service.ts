@@ -47,8 +47,6 @@ export class FarmerService {
     // GET FARMER
     getFarmer(farmerId: string, token: string): void {
 
-        console.log('getting farmer!');
-
         let headers = new Headers({ 
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + this.localStorage.get('token')

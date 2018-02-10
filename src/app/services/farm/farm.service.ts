@@ -83,10 +83,8 @@ export class FarmService {
     }
 
     // GET FARMS
-    getFarms(farmerId: string): void {;
-
-        console.log('getting farm!');
-
+    getFarms(farmerId: string): void {
+        
         let headers = new Headers({ 
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + this.localStorage.get('token')
@@ -137,10 +135,7 @@ export class FarmService {
         this.http.post(setLightingUrl, { farmId: farmId, lightingOn: lightingOn, lightingOff: lightingOff }, options).subscribe(data => {
             
             if(data.status == 201) {
-
-                console.log('New lighting configuration saved!');
                 setLighting(farmId, lightingOn, lightingOff, this.farmStore.farm, this._farm);
-                
             }
 
         }, err => {
@@ -191,10 +186,7 @@ export class FarmService {
         this.http.post(farmTemperatureUrl, { farmId: farmId, temperature: temperature }, options).subscribe(data => {
             
             if(data.status == 201) {
-
-                console.log('Temperature saved!');
                 setVentilationTemperatue(farmId, temperature, this.farmStore.farm, this._farm);
-                
             }
 
         }, err  => {
@@ -241,10 +233,7 @@ export class FarmService {
         this.http.post(farmTemperatureUrl, { farmId: farmId, watering: watering }, options).subscribe(data => {
             
             if(data.status == 201) {
-
-                console.log('Watering saved!');
                 setWateringPeriod(farmId, watering, this.farmStore.farm, this._farm);
-            
             }
 
         }, err => {
