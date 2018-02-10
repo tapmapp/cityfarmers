@@ -33,12 +33,11 @@ export class ChartComponent implements OnInit {
   // LOADER 
   loaderStatus: Boolean = true;
 
-  // SUBSCRIBERS
-  farmsData: Observable<any>;
-  dataPeriod: Observable<Array<Environment>>;
+  allChartData: Array<Environment> = [];
 
-  // SUBSCRIBERS VARIABLES
+  // SUBSCRIBERS
   socketData: Observable<any>;
+  chartData: Observable<Array<Environment>>;
 
   constructor(
     private chartService: ChartService,
@@ -155,20 +154,14 @@ export class ChartComponent implements OnInit {
   // SELECT CHART PERIOD
   selectPeriod(period: string) {
 
-    // LOADER ON
-    this.loaderStatus = true;
+      // LOADER ON
+      this.loaderStatus = true;
 
-    this.selectedDataPeriod = period;
+      // SET CHART PERIOD
+      this.selectedDataPeriod = period;
 
-    setTimeout(() => {
-
-      let chartData: Array<Environment> = this.localStorage.get('chartData-' + this.farm[0]._id);
-
-      // RENDER CHART DATA
-      this.renderChartData(chartData, this.lineChartData, this.lineChartLabels, this.chart);
-
-    }, 0);
-    
+      this.renderChartData(this.lineChartData, this.lineChartLabels, this.chart);
+  
   }
 
   // PUSH NEW DATA TO THE CHART
@@ -222,31 +215,23 @@ export class ChartComponent implements OnInit {
 
       if(chartData !== null) {
 
-        let fromDate = new Date(chartData[0].date);
+        // DATE OF THE LAST VALUE OF THE STORED DATA
+        let fromDate = new Date(chartData[chartData.length - 1].date);
         fromDate.setSeconds(fromDate.getSeconds() + 1);
         
+        // DATE OF TODAY
         let toDate = new Date();
 
-        let formatFromDate = fromDate.getFullYear() + '-' + formatValue(fromDate.getMonth() + 1) + '-' + formatValue(fromDate.getDate()) + ' ' + formatValue(fromDate.getHours()) + ':' + formatValue(fromDate.getMinutes()) + ':' + formatValue(fromDate.getSeconds()+10);
-        let formatToDate = toDate.getFullYear() + '-' + formatValue(toDate.getMonth() + 1) + '-' +  formatValue(toDate.getDate()) + ' ' + formatValue(toDate.getHours()) + ':' + formatValue(toDate.getMinutes()) + ':' + formatValue(toDate.getSeconds());
-
+        // GET DATA SINCE THE DATE OF THE LAST STORED VALUE
         this.chartService.getChartData(this.farm[0]._id, fromDate.toString(), toDate.toString());
-
-        // RENDER CHART DATA IF AVAILABLE
-        this.checkChartData(this.farm[0]._id, this.localStorage);
 
       } else {
 
         let fromDate = new Date(this.farm[0].created);
         let toDate = new Date();
 
-        let formatFromDate = fromDate.getFullYear() + '-' + formatValue(fromDate.getMonth() + 1) + '-' + formatValue(fromDate.getDate()) + ' ' + formatValue(fromDate.getHours()) + ':' + formatValue(fromDate.getMinutes()) + ':' + formatValue(fromDate.getSeconds());
-        let formatToDate = toDate.getFullYear() + '-' + formatValue(toDate.getMonth() + 1) + '-' +  formatValue(toDate.getDate()) + ' ' + formatValue(toDate.getHours()) + ':' + formatValue(toDate.getMinutes()) + ':' + formatValue(toDate.getSeconds());
-
-        this.chartService.getChartData(this.farm[0]._id, formatFromDate, formatToDate);
-
-        // RENDER CHART DATA IF AVAILABLE
-        this.checkChartData(this.farm[0]._id, this.localStorage);
+        // GET ALL STORED DATA SINCE THE CREATION OF THE FARM
+        this.chartService.getChartData(this.farm[0]._id, fromDate.toString(), toDate.toString());
 
       }
       
@@ -266,13 +251,14 @@ export class ChartComponent implements OnInit {
 
   }
   
-  renderChartData(chartData: Array<Environment>, lineChartData: Array<any>, lineChartLabels: Array<any>, chart: any) {
-
-    var lastTime: number = new Date(chartData[0].date).getTime();
+  renderChartData(lineChartData: Array<any>, lineChartLabels: Array<any>, chart: any) {
+    
+    var lastTime: number = new Date(this.allChartData[this.allChartData.length - 1].date).getTime();
     var fromTime: number;
 
     // EMPTY CHART DATA ARRAYS
     lineChartData[0].data.length = 0;
+    lineChartData[1].data.length = 0;
     lineChartLabels.length = 0;
 
     if(this.selectedDataPeriod == 'minutes') {
@@ -295,7 +281,7 @@ export class ChartComponent implements OnInit {
       
     }
 
-    if(this.selectedDataPeriod == 'daily') {
+    if(this.selectedDataPeriod == 'days') {
       
       // MONTH IN MILLY SECONDS
       const monthMilly = 31 * 24 * 3600 * 1000;
@@ -304,30 +290,58 @@ export class ChartComponent implements OnInit {
       fromTime = new Date(lastTime - monthMilly).getTime();
 
     }
-
-    for(let i = chartData.length - 1; i > 0; i--) {
     
-      let newTime = new Date(chartData[i].date);
-      
+    for(let i = 0; i < this.allChartData.length; i++) {
+    
+      let newTime = new Date(this.allChartData[i].date);
+
       if(newTime.getTime() > fromTime) {
+        
+        lineChartData[0].data.push(this.allChartData[i].temperature);
+        lineChartData[1].data.push(this.allChartData[i].humidity);
 
-        lineChartData[0].data.push(chartData[i].temperature);
-        lineChartData[1].data.push(chartData[i].humidity);
+        if(this.selectedDataPeriod == 'minutes') {
+          lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()) + ':' + formatValue(newTime.getSeconds()));
+        }
+        
+        if(this.selectedDataPeriod == 'hours') {
+          lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth()) + ' ' + formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()));
+        }
 
-        lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()) + ':' + formatValue(newTime.getSeconds()));
-      
+        if(this.selectedDataPeriod == 'days') {
+          lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth() + 1));
+        }
+
       } 
 
     }
     
-    // RENDER CHART DATA
-    chart.chart.update();
-
+    // UPDATE CHART DATA
+    updateChart();
+    
     // LOADER OFF
-    setTimeout(()=>{
+    setTimeout(() => {
       this.loaderStatus = false;
-    }, 500);
+    }, 750);
 
+    // UPDATE CHART DATA FUNCTION
+    function updateChart() {
+
+      if(chart.chart === undefined) {
+
+        setTimeout(() => {
+          updateChart();
+        }, 100);
+
+      } else {
+
+        // UPDATE CHART DATA
+        chart.chart.update();
+
+      }
+    }
+
+    // FORMAT VALUE FUNCTION
     function formatValue(value: number) {
 
       let newValue: string;
@@ -340,29 +354,25 @@ export class ChartComponent implements OnInit {
       
     }
 
-  } 
-
-
-  checkChartData(farmId: string, localStorage: LocalStorageService) {
-
-    let chartData: Array<Environment> = localStorage.get('chartData-' + farmId);
-
-    if (chartData !== null) {
-
-      // RENDER CHART DATA
-      this.renderChartData(chartData, this.lineChartData, this.lineChartLabels, this.chart);
-
-    } else {
-      
-      setTimeout(()=>{
-        this.checkChartData(farmId, localStorage);
-      }, 100);
-
-    }
-    
   }
 
   ngOnInit() {
+
+    // CHART DATA SUBSCRIBER
+    this.chartData = this.chartService.chartData;
+    this.chartData.subscribe(data => {
+
+      if(data.length > 0) {
+
+        this.allChartData.length = 0;
+        this.allChartData = data;
+
+        // RENDER CHART DATA
+        this.renderChartData(this.lineChartData, this.lineChartLabels, this.chart);
+
+      }
+
+    });
 
     // SOCKET DATA 
     this.socketData = this.socketService.environment;

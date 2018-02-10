@@ -96,24 +96,49 @@ export class FarmComponent implements OnInit {
 
     for(let i = 0; i < farmsData.length; i++) {
       if(this.farmId == farmsData[i]._id) {
-      
-        this.farm.push({
-          _id: farmsData[i]._id,
-          farmer: farmsData[i].farmer,
-          name: farmsData[i].name,
-          system: farmsData[i].system,
-          city: farmsData[i].city,
-          country: farmsData[i].country,
-          temperatureVent: farmsData[i].temperatureVent,
-          watering: farmsData[i].watering,
-          temperature: 0,
-          humidity: 0,
-          state: false,
-          status: false,
-          lightingOn: farmsData[i].lightingOn,
-          lightingOff: farmsData[i].lightingOff,
-          created: farmsData[i].created
-        });
+        
+        if(this.farm.length > 0) {
+
+          this.farm = [{
+            _id: farmsData[i]._id,
+            farmer: farmsData[i].farmer,
+            name: farmsData[i].name,
+            system: farmsData[i].system,
+            city: farmsData[i].city,
+            country: farmsData[i].country,
+            temperatureVent: farmsData[i].temperatureVent,
+            watering: farmsData[i].watering,
+            temperature: this.farm[0].temperature,
+            humidity: this.farm[0].humidity,
+            state: false,
+            status: false,
+            lightingOn: farmsData[i].lightingOn,
+            lightingOff: farmsData[i].lightingOff,
+            created: farmsData[i].created
+          }];
+
+        } else {
+
+          this.farm.push({
+            _id: farmsData[i]._id,
+            farmer: farmsData[i].farmer,
+            name: farmsData[i].name,
+            system: farmsData[i].system,
+            city: farmsData[i].city,
+            country: farmsData[i].country,
+            temperatureVent: farmsData[i].temperatureVent,
+            watering: farmsData[i].watering,
+            temperature: 0,
+            humidity: 0,
+            state: false,
+            status: false,
+            lightingOn: farmsData[i].lightingOn,
+            lightingOff: farmsData[i].lightingOff,
+            created: farmsData[i].created
+          });
+
+        }
+        
 
       }
     }

@@ -1,4 +1,4 @@
-.loader-container { position: absolute; height: calc(65vh - 60px); top: 65px; display: none; text-align: center; width: 100%; background-color: #fffdf6; z-index: 100; }
+.loader-container { position: absolute; height: calc(65vh - 100px); top: 105px; display: none; text-align: center; width: 100%; background-color: #fffdf6; z-index: 100; }
 .loader-container.active { display: table; }
 .loader { display: table-cell; vertical-align: middle; color: #333; }
 
@@ -16,3 +16,4 @@
 .chart-menu .chart-period li.active { font-weight: bold; }
 
 canvas { width:100% !important; }
+canvas.active { display: none !important; }

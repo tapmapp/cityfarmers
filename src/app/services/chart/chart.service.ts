@@ -15,9 +15,9 @@ import { Environment } from '../../interfaces/environment';
 export class ChartService {
 
     // DATA PERIOD OBSERVABLE SERVICE
-    dataPeriod: Observable<Array<Environment>>;
-    private _dataPeriod: BehaviorSubject<Array<Environment>>;
-    private dataPeriodStore: { dataPeriod: Array<Environment> };
+    chartData: Observable<Array<Environment>>;
+    private _chartData: BehaviorSubject<Array<Environment>>;
+    private chartDataStore: { chartData: Array<Environment> };
 
     constructor(
         private localStorage: LocalStorageService,
@@ -25,9 +25,9 @@ export class ChartService {
         private tokenService: TokenService) {
 
         // DATA PERIOD OBSERVABLE SERVICE INITIALIZATION VARIABLES
-        this.dataPeriodStore = { dataPeriod: [] };
-        this._dataPeriod = new BehaviorSubject(this.dataPeriodStore.dataPeriod);
-        this.dataPeriod = this._dataPeriod.asObservable();
+        this.chartDataStore = { chartData: [] };
+        this._chartData = new BehaviorSubject(this.chartDataStore.chartData);
+        this.chartData = this._chartData.asObservable();
 
     }
 
@@ -50,27 +50,36 @@ export class ChartService {
             if(data.status == 200) {
 
                 var response = JSON.parse(data.text());
-                
+                var chartData: Array<Environment> = this.localStorage.get('chartData-' + farmId);
 
-                if(this.localStorage.get('chartData-' + farmId)) {
+                if(chartData !== null) {
 
-                    var chartData:Array<Environment> = this.localStorage.get('chartData-' + farmId);
-                    
+                    console.log(chartData.length);
+
                     if(response.length > 0) {
 
-                        for(let i = response.length - 1; i >= 0; i--) {
-                            chartData.unshift(response[i]);
-                        }
-                        
-                        // SAVE CHART DATA ON LOCAL STORAGE
-                        this.localStorage.set('chartData-' + farmId, chartData);                        
+                        for(let i = 0; i < response.length; i++) {
+                            let newTime = new Date(chartData[i].date);
+                            chartData.push(response[i]);
+                        }        
 
                     }
+
+                    // SAVE CHART DATA ON LOCAL STORAGE
+                    this.localStorage.set('chartData-' + farmId, chartData);                
+
+                    // SEND CHART DATA TO SUBSCRIBERS
+                    this.chartDataStore.chartData = chartData;
+                    this._chartData.next(this.chartDataStore.chartData);
 
                 } else {
 
                     // SAVE CHART DATA ON LOCAL STORAGE
                     this.localStorage.set('chartData-' + farmId, response);
+
+                    // SEND CHART DATA TO SUBSCRIBERS
+                    this.chartDataStore.chartData = response;
+                    this._chartData.next(this.chartDataStore.chartData);
 
                 }                
 

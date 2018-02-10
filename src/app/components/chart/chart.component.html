@@ -23,7 +23,8 @@
         [legend]="lineChartLegend"
         [chartType]="lineChartType"
         (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)">
+        (chartClick)="chartClicked($event)"
+        [ngClass]="{'active': loaderStatus }">
     </canvas>
 </div>
 <script src="node_modules/chart.js/src/chart.js"></script>

@@ -147,12 +147,12 @@ export class FarmerComponent implements OnInit {
       farms[i].temperature = 0;
 
       var chartData: Array<Environment> = this.localStorage.get('chartData-' + farms[i]._id);
-      
+
       if(chartData) {
         
         if(chartData.length > 0) {
 
-          let fromDate = new Date(chartData[0].date);
+          let fromDate = new Date(chartData[chartData.length - 1].date);
           let toDate = new Date();
 
           let formatFromDate = fromDate.getFullYear() + '-' + formatValue(fromDate.getMonth() + 1) + '-' + formatValue(fromDate.getDate()) + ' ' + formatValue(fromDate.getHours()) + ':' + formatValue(fromDate.getMinutes()) + ':' + formatValue(fromDate.getSeconds());

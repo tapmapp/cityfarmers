@@ -30,11 +30,11 @@ export class LoginComponent {
   errorData: Observable<any>;
 
   constructor(
-    private localStorageService: LocalStorageService,
+    private localStorage: LocalStorageService,
     private router: Router,
     private loginService: LoginService) {
 
-    if(localStorage.getItem('cityfarmers-app.token')) {
+    if(this.localStorage.get('token')) {
       this.router.navigate(['farmer']);
     }
 
