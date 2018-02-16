@@ -15,8 +15,10 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './components/chart';
 import { FarmerComponent } from './components/farmer';
+import { FooterComponent } from './components/footer';
 import { HeaderComponent } from './components/header';
 import { HomeComponent } from './components/home';
+import { HomeNavComponent } from './components/home-nav';
 import { LoginComponent } from './components/login';
 import { FarmComponent } from './components/farm';
 import { SocketComponent } from './components/socket';
@@ -46,8 +48,10 @@ import '../styles.css';
     AppComponent,
     ChartComponent,
     FarmerComponent,
+    FooterComponent,
     HeaderComponent,
     HomeComponent,
+    HomeNavComponent,
     LoginComponent,
     FarmComponent,
     SocketComponent

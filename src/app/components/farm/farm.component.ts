@@ -180,7 +180,7 @@ export class FarmComponent implements OnInit {
   // SET FARM STATUS
   setFarmStatus(status) {
     for(let i = 0; i < this.farm.length; i++) {
-      if(this.farm[i].name == status.room && status.status == 'connected') {
+      if(this.farm[i]._id == status.room && status.status == 'connected') {
         this.farm[i].status = true;
       }
     }
@@ -196,7 +196,7 @@ export class FarmComponent implements OnInit {
   // SET ENVIRONMENT
   setEnvironment(status) {
     for(let i = 0; i < this.farm.length; i++) {
-      if(this.farm[i].name == status[0].room) {
+      if(this.farm[i]._id == status[0].room) {
         this.farm[i].humidity = status[0].humidity;
         this.farm[i].temperature = status[0].temperature;
       }

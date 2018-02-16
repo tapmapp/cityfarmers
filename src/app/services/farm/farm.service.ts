@@ -183,7 +183,7 @@ export class FarmService {
         // FARM TEMPERATURE URL
         let farmTemperatureUrl = 'https://cityfarmers-api.herokuapp.com/farm/set-temperature';
 
-        this.http.post(farmTemperatureUrl, { farmId: farmId, temperature: temperature }, options).subscribe(data => {
+        this.http.post(farmTemperatureUrl, { farmerId: this.localStorage.get('farmerId').toString(), farmId: farmId, temperature: temperature }, options).subscribe(data => {
             
             if(data.status == 201) {
                 setVentilationTemperatue(farmId, temperature, this.farmStore.farm, this._farm);

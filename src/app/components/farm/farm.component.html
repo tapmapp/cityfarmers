@@ -47,8 +47,8 @@
                     <img src="/assets/img/fan.png"> <span>{{ farm.temperatureVent }} ºC</span>
                     
                     <ul class="control on-off">
-                        <li (click)="switchFan(farm.name, true)" [ngClass]="{ 'active': fanStatus }">ON</li>
-                        <li (click)="switchFan(farm.name, false)" [ngClass]="{ 'active': !fanStatus }">AUTO</li>
+                        <li (click)="switchFan(farm._id, true)" [ngClass]="{ 'active': fanStatus }">ON</li>
+                        <li (click)="switchFan(farm._id, false)" [ngClass]="{ 'active': !fanStatus }">AUTO</li>
                     </ul>
                     <ul class="control">
                         <li (click)="temperatureUp()"><i class="fa fa-plus" aria-hidden="true"></i></li>
@@ -62,8 +62,8 @@
                         <span>{{ farm.watering }}<span class="segs-min"> min</span></span>
                     </span>
                     <ul class="control on-off">
-                        <li (click)="switchWatering(farm.name, true)" [ngClass]="{ 'active': wateringStatus }">ON</li>
-                        <li (click)="switchWatering(farm.name, false)" [ngClass]="{ 'active': !wateringStatus }">AUTO</li>
+                        <li (click)="switchWatering(farm._id, true)" [ngClass]="{ 'active': wateringStatus }">ON</li>
+                        <li (click)="switchWatering(farm._id, false)" [ngClass]="{ 'active': !wateringStatus }">AUTO</li>
                     </ul>
                     <ul class="control"> 
                         <li (click)="wateringUp()"><i class="fa fa-plus" aria-hidden="true"></i></li>
