@@ -46,7 +46,7 @@ export class SocketComponent {
         for(let i = 0; i < farmsData.length; i++) {
 
             // SUBSCRIBE TO FARM SOCKETS
-            this.socket.emit('subscribe', farmsData[i].name);
+            this.socket.emit('subscribe', farmsData[i]._id);
 
         }
     

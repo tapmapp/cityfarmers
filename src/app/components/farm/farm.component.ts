@@ -392,6 +392,8 @@ export class FarmComponent implements OnInit {
     this.socketData = this.socketService.environment;
     this.socketData.subscribe(data => {
 
+      console.log(data);
+
       if (data.length > 0) {
         this.setEnvironment(data);
       }
