@@ -160,7 +160,7 @@ export class ChartComponent implements OnInit {
       // SET CHART PERIOD
       this.selectedDataPeriod = period;
 
-      this.renderChartData(this.lineChartData, this.lineChartLabels, this.chart);
+      this.setChartData();
   
   }
 
@@ -174,12 +174,21 @@ export class ChartComponent implements OnInit {
       }, 100);
 
     } else {
+      
+      // REMOVE FIRST ELEMENT OF THE ARRAY
+      this.lineChartData[0].data.shift();
+      this.lineChartData[1].data.shift();
 
+      // ADD NEW DATA
       this.lineChartData[0].data.push(data[0].temperature);
       this.lineChartData[1].data.push(data[0].humidity);
 
       let newTime = new Date();
 
+      // REMOVE FIRST ELEMENT OF THE ARRAY
+      this.lineChartLabels.shift();
+
+      // ADD NEW DATA
       this.lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()) + ':' + formatValue(newTime.getSeconds()));
 
       this.chart.chart.update();

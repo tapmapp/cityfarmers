@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 // LOCAL STORAGE
 import { LocalStorageService } from 'angular-2-local-storage';
@@ -29,6 +30,7 @@ export class FarmService {
         private chartService: ChartService,
         private http: Http,
         private localStorage: LocalStorageService,
+        private route: ActivatedRoute,
         private tokenService: TokenService) {
 
         // FARM INITIALIZATION VARIABLES
@@ -132,7 +134,7 @@ export class FarmService {
         // SET FARM URL
         let setLightingUrl = 'https://cityfarmers-api.herokuapp.com/farm/set-lighting';
 
-        this.http.post(setLightingUrl, { farmId: farmId, lightingOn: lightingOn, lightingOff: lightingOff }, options).subscribe(data => {
+        this.http.post(setLightingUrl, { farmerId: this.localStorage.get('farmerId').toString(), farmId: farmId, lightingOn: lightingOn, lightingOff: lightingOff }, options).subscribe(data => {
             
             if(data.status == 201) {
                 setLighting(farmId, lightingOn, lightingOff, this.farmStore.farm, this._farm);
@@ -164,11 +166,7 @@ export class FarmService {
                 }
             }
         }
-
-
-
     }
-
 
     // SET TEMPERATURE
     setTemperature(farmId: string, temperature: number): void {
@@ -214,7 +212,6 @@ export class FarmService {
                 }
             }
         }
-
     }
 
     // SET WATERING
@@ -230,7 +227,7 @@ export class FarmService {
         // FARM WATERING URL
         let farmTemperatureUrl = 'https://cityfarmers-api.herokuapp.com/farm/set-watering';
 
-        this.http.post(farmTemperatureUrl, { farmId: farmId, watering: watering }, options).subscribe(data => {
+        this.http.post(farmTemperatureUrl, { farmerId: this.localStorage.get('farmerId'), farmId: farmId, watering: watering }, options).subscribe(data => {
             
             if(data.status == 201) {
                 setWateringPeriod(farmId, watering, this.farmStore.farm, this._farm);
@@ -261,7 +258,5 @@ export class FarmService {
                 }
             }
         }
-
     }
-
 }

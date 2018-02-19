@@ -1,3 +1,7 @@
+.loader-container { height: calc(100vh - 64px); display: none; position: absolute; z-index: 1000; width: 100%; background-color: #fffdf6; }
+.loader-container.active { display: table; }
+.loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
+
 .profile-container { float: left; width: 20%; }
 .profile-container .farmer-info { font-family: 'Josefin Slab', serif; margin: 30px 0px 0px 50px; }
 .profile-container .farmer-info .img { margin: 0px 0px 30px 0px; }
@@ -5,7 +9,7 @@
 
 .farms-container { float: left; width: 55%; }
 .farms-container h2 { margin: 30px 0px 30px 0px; }
-.farms-container .farm span { display: inline-block; width: 55px; text-align: right; }
+.farms-container .farm span { display: inline-block; width: 70px; text-align: right; }
 .farms-container .farm .name { width: 100px; }
 .farms-container .farm .mins { display: inline-block; width: 70px;}
 .farms-container .create-farm-container { width: 220px; }

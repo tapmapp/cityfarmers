@@ -53,6 +53,8 @@ export class FarmerComponent implements OnInit {
   noteContainerStatus: Boolean = true;
   farmListState: Boolean = false;
 
+  loaderStatus: Boolean = true;
+
   // SUBSCRIBERS
   farmerData: Observable<Array<Farmer>>;
   farmsData: Observable<Array<Farm>>;
@@ -188,6 +190,11 @@ export class FarmerComponent implements OnInit {
 
     this.farms = farms;
 
+    // LOADER OFF
+    setTimeout(()=> {
+      this.loaderStatus = false;
+    },1000);
+    
     function formatValue(value: number) {
 
       let newValue: String;
@@ -218,7 +225,7 @@ export class FarmerComponent implements OnInit {
   // SET ENVIRONMENT
   setEnvironment(status): void {
     for(let i = 0; i < this.farms.length; i++) {
-      if(this.farms[i].name == status[0].room) {
+      if(this.farms[i]._id == status[0].room) {
         this.farms[i].humidity = status[0].humidity;
         this.farms[i].temperature = status[0].temperature;
       }
@@ -269,7 +276,9 @@ export class FarmerComponent implements OnInit {
     // FARMS SUBSCRIBER
     this.farmsData = this.farmService.farm;
     this.farmsData.subscribe(data => {
-      this.setFarms(data);
+      if(data.length > 0) {
+        this.setFarms(data);
+      }
     });
 
     // SOCKET SUBSCRIBER
