@@ -33,7 +33,9 @@
                 <li><i class="fa fa-moon-o" aria-hidden="true"></i> {{ farm.lightingOff }}</li>
                 <li><img src="/assets/img/fan.png" class="fan"> <span>{{ farm.temperatureVent }} ºC</span></li>
                 <li><img src="/assets/img/watering-icon.png" class="watering"> <span class="mins">{{ farm.watering }} min</span></li>
-                <li class="connection"><i class="fa fa-wifi" aria-hidden="true"></i></li>
+                <li class="connection" [ngClass]="{ 'active' : farm.status }">
+                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                </li>
             </ul>
         </a>
     </div>

@@ -72,13 +72,9 @@ export class FarmService {
             }
 
         }, err => {
-            
-            if(err.status == 401 || err.status == 404 ) {
 
-                // CLEAR TOKEN AND REDIRECT TO LOGIN
-                this.tokenService.clearToken();
-            
-            }
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
 
         });
 
@@ -110,12 +106,8 @@ export class FarmService {
 
         }, err => {
 
-            if(err.status == 401 || err.status == 404 ) {
-
-                // CLEAR TOKEN AND REDIRECT TO LOGIN
-                this.tokenService.clearToken();
-            
-            }
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
 
         });
 
@@ -142,12 +134,8 @@ export class FarmService {
 
         }, err => {
 
-            if(err.status == 401 || err.status == 404 ) {
-                
-                // CLEAR TOKEN AND REDIRECT TO LOGIN
-                this.tokenService.clearToken();
-
-            }
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
 
         });
 
@@ -189,12 +177,8 @@ export class FarmService {
 
         }, err  => {
 
-            if(err.status == 401 || err.status == 404 ) {
-                
-                // CLEAR TOKEN AND REDIRECT TO LOGIN
-                this.tokenService.clearToken();
-
-            }
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
 
         });
 
@@ -235,12 +219,8 @@ export class FarmService {
 
         }, err => {
 
-            if(err.status == 401 || err.status == 404 ) {
-
-                // CLEAR TOKEN AND REDIRECT TO LOGIN
-                this.tokenService.clearToken();
-
-            }
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
 
         });
 

@@ -61,15 +61,13 @@ export class ChartComponent implements OnInit {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      
       yAxes: [{
-
         ticks: {
           padding: 30,
           min: 0,
           max: 45
         },
-        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+        //type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
         display: true,
         position: 'left',
         id: 'A',
@@ -84,7 +82,7 @@ export class ChartComponent implements OnInit {
           min: 0,
           max: 100
         },
-        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+        //type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
         display: true,
         position: 'right',
         id: 'B',
@@ -96,7 +94,6 @@ export class ChartComponent implements OnInit {
       }],
       xAxes: [{
         display: true,
-
         ticks: {
           autoSkip: true,
           maxTicksLimit: 8,
@@ -174,22 +171,97 @@ export class ChartComponent implements OnInit {
       }, 100);
 
     } else {
-      
-      // REMOVE FIRST ELEMENT OF THE ARRAY
-      this.lineChartData[0].data.shift();
-      this.lineChartData[1].data.shift();
-
-      // ADD NEW DATA
-      this.lineChartData[0].data.push(data[0].temperature);
-      this.lineChartData[1].data.push(data[0].humidity);
 
       let newTime = new Date();
 
-      // REMOVE FIRST ELEMENT OF THE ARRAY
-      this.lineChartLabels.shift();
+      if(this.selectedDataPeriod == 'minutes') {
 
-      // ADD NEW DATA
-      this.lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()) + ':' + formatValue(newTime.getSeconds()));
+        if(this.lineChartLabels[this.lineChartLabels.length - 1] == formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes())) {
+
+          let actualTemp = ((this.lineChartData[0].data[this.lineChartData[0].data.length - 1] + parseFloat(data[0].temperature)) / 2).toFixed(1);
+          let actualHum = ((this.lineChartData[1].data[this.lineChartData[1].data.length - 1] + parseFloat(data[0].humidity)) / 2).toFixed(1);
+
+          this.lineChartData[0].data[this.lineChartData[0].data.length - 1] = parseFloat( actualTemp );
+          this.lineChartData[1].data[this.lineChartData[1].data.length - 1] = parseFloat( actualHum );
+
+        } else {
+
+          // ADD NEW DATA
+          this.lineChartData[0].data.push(parseFloat(data[0].temperature));
+          this.lineChartData[1].data.push(parseFloat(data[0].humidity));
+
+          // ADD NEW TIME DATA
+          this.lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()));
+
+          // REMOVE FIRST ELEMENT OF THE DATA ARRAY
+          if(this.lineChartData[0].data.length > 60) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 60) this.lineChartData[1].data.shift();
+
+          // REMOVE FIRST ELEMENT OF THE TIME ARRAY
+          if(this.lineChartLabels.length > 60) this.lineChartLabels.shift();
+
+        }
+      }
+
+      if(this.selectedDataPeriod == 'hours') {
+
+        if(this.lineChartLabels[this.lineChartLabels.length - 1] == formatValue(newTime.getHours()) + 'h') {
+
+          let actualTemp = ((this.lineChartData[0].data[this.lineChartData[0].data.length - 1] + parseFloat(data[0].temperature)) / 2).toFixed(1);
+          let actualHum = ((this.lineChartData[1].data[this.lineChartData[1].data.length - 1] + parseFloat(data[0].humidity)) / 2).toFixed(1);
+
+          this.lineChartData[0].data[this.lineChartData[0].data.length - 1] = parseFloat( actualTemp );
+          this.lineChartData[1].data[this.lineChartData[1].data.length - 1] = parseFloat( actualHum );
+
+        } else {
+
+          // ADD NEW DATA
+          this.lineChartData[0].data.push(parseFloat(data[0].temperature));
+          this.lineChartData[1].data.push(parseFloat(data[0].humidity));
+
+          // ADD NEW TIME DATA
+          this.lineChartLabels.push(formatValue(newTime.getHours()) + 'h');
+
+          // REMOVE FIRST ELEMENT OF THE DATA ARRAY
+          if(this.lineChartData[0].data.length > 60) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 60) this.lineChartData[1].data.shift();
+
+          // REMOVE FIRST ELEMENT OF THE TIME ARRAY
+          if(this.lineChartLabels.length > 60) this.lineChartLabels.shift();
+
+        }
+
+      }
+
+      if(this.selectedDataPeriod == 'days') {
+
+        if(this.lineChartLabels[this.lineChartLabels.length - 1] == formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth())) {
+
+          let actualTemp = ((this.lineChartData[0].data[this.lineChartData[0].data.length - 1] + parseFloat(data[0].temperature)) / 2).toFixed(1);
+          let actualHum = ((this.lineChartData[1].data[this.lineChartData[1].data.length - 1] + parseFloat(data[0].humidity)) / 2).toFixed(1);
+
+          this.lineChartData[0].data[this.lineChartData[0].data.length - 1] = parseFloat( actualTemp );
+          this.lineChartData[1].data[this.lineChartData[1].data.length - 1] = parseFloat( actualHum );
+
+        } else {
+
+          // ADD NEW DATA
+          this.lineChartData[0].data.push(parseFloat(data[0].temperature));
+          this.lineChartData[1].data.push(parseFloat(data[0].humidity));
+
+          // ADD NEW TIME DATA
+          this.lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth()));
+
+          // REMOVE FIRST ELEMENT OF THE DATA ARRAY
+          if(this.lineChartData[0].data.length > 60) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 60) this.lineChartData[1].data.shift();
+
+          // REMOVE FIRST ELEMENT OF THE TIME ARRAY
+          if(this.lineChartLabels.length > 60) this.lineChartLabels.shift();
+
+        }
+
+      }
 
       this.chart.chart.update();
 
@@ -270,6 +342,10 @@ export class ChartComponent implements OnInit {
     lineChartData[1].data.length = 0;
     lineChartLabels.length = 0;
 
+    var timePeriod = [];
+    var dataPeriod = [];
+    var actualDataPeriod = [];
+
     if(this.selectedDataPeriod == 'minutes') {
 
       // 1 HOUR IN MILLY SECONDS
@@ -300,31 +376,78 @@ export class ChartComponent implements OnInit {
 
     }
     
-    for(let i = 0; i < this.allChartData.length; i++) {
+
+    let chartDateLength = this.allChartData.length;
+
+    for(let i = 0; i < chartDateLength; i++) {
     
       let newTime = new Date(this.allChartData[i].date);
 
       if(newTime.getTime() > fromTime) {
-        
-        lineChartData[0].data.push(this.allChartData[i].temperature);
-        lineChartData[1].data.push(this.allChartData[i].humidity);
 
         if(this.selectedDataPeriod == 'minutes') {
-          lineChartLabels.push(formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()) + ':' + formatValue(newTime.getSeconds()));
+
+          let newTimeFormat = formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes());
+
+          if(dataPeriod[newTimeFormat] !== undefined) {
+            dataPeriod[newTimeFormat].push({ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity });
+          } else {
+            dataPeriod[newTimeFormat] = [{ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity }];
+          }
+
         }
         
         if(this.selectedDataPeriod == 'hours') {
-          lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth()) + ' ' + formatValue(newTime.getHours()) + ':' + formatValue(newTime.getMinutes()));
+
+          let newTimeFormat = formatValue(newTime.getHours()) + 'h';
+
+          if(dataPeriod[newTimeFormat] !== undefined) {
+            dataPeriod[newTimeFormat].push({ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity });
+          } else {
+            dataPeriod[newTimeFormat] = [{ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity }];
+          }
+
         }
 
         if(this.selectedDataPeriod == 'days') {
-          lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth() + 1));
+          
+          let newTimeFormat = formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth());
+
+          if(dataPeriod[newTimeFormat] !== undefined) {
+            dataPeriod[newTimeFormat].push({ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity });
+          } else {
+            dataPeriod[newTimeFormat] = [{ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity }];
+          }
+
         }
 
-      } 
+      }
+    }
+
+    let dataPeriodKeys = Object.keys(dataPeriod);
+
+    // CALCULATE AVERAGE
+    for(let i = 0; i < dataPeriodKeys.length; i++) {
+      
+      let dataPeriodDataKey = dataPeriod[dataPeriodKeys[i]];
+
+      let temp = 0;
+      let hum = 0;
+
+      for(let j = 0; j < dataPeriodDataKey.length; j++) {
+        temp += dataPeriodDataKey[j].temp;
+        hum += dataPeriodDataKey[j].hum;
+      }
+
+      temp = parseFloat((temp / dataPeriodDataKey.length).toFixed(1));
+      hum = parseFloat((hum / dataPeriodDataKey.length).toFixed(1));
+
+      lineChartData[0].data.push(temp);
+      lineChartData[1].data.push(hum);
+      lineChartLabels.push(dataPeriodKeys[i]);
 
     }
-    
+
     // UPDATE CHART DATA
     updateChart();
     

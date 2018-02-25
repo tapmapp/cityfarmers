@@ -4,12 +4,12 @@
 .content-container .farms-container { height: calc(35vh - 5px); padding: 0px 50px; border-top: 1px solid #d4cbb2; background-image: url('/assets/img/wood-texture.jpg'); }
 .content-container .farms-container h2 { color: #808058; margin: 60px 0px 30px 0px; }
 .content-container .farms-container h2 img { width: 30px; padding: 0px 15px 0px 0px; position: relative; top: 8px; }
-.content-container .farms-container .container { width: 18%; float: left; } 
+.content-container .farms-container .container { width: 20%; float: left; } 
 .content-container .farms-container .container.farm-desc { width: 15%; padding: 100px 0px 0px 0px; }  
 .content-container .farms-container .container.farm-desc h2 { margin: 0px; }
 .content-container .farms-container .container.farm-desc ul li { color: #808058; line-height: 24px; font-size: 14px; }
 .content-container .farms-container .container.farm-desc ul li i { width: 20px; text-align: center; }
-.content-container .farms-container .container.lighting-desc { width: 26%; }
+.content-container .farms-container .container.lighting-desc { width: 24%; }
 .content-container .farms-container .container.ventilation-desc { width: 25%; }
 .content-container .farms-container .container.time-desc { width: 15%; }
 

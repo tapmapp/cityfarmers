@@ -141,15 +141,17 @@ export class FarmerComponent implements OnInit {
   setFarms(farms: Array<Farm>): void {
 
     for(let i = 0; i < farms.length; i++) {
+
       if(i == 0) {
         this.selectedfarmName = farms[i].name;
       }
 
+      farms[i].status = false;
       farms[i].humidity = 0;
       farms[i].temperature = 0;
-
-      var chartData: Array<Environment> = this.localStorage.get('chartData-' + farms[i]._id);
-
+      
+      var chartData: Array<any> = this.localStorage.get('chartData-' + farms[i]._id);
+      
       if(chartData) {
         
         if(chartData.length > 0) {
@@ -185,9 +187,9 @@ export class FarmerComponent implements OnInit {
         this.chartService.getChartData(farms[i]._id, formatFromDate, formatToDate);
 
       }
-
+      
     }
-
+    
     this.farms = farms;
 
     // LOADER OFF
@@ -228,6 +230,7 @@ export class FarmerComponent implements OnInit {
       if(this.farms[i]._id == status[0].room) {
         this.farms[i].humidity = status[0].humidity;
         this.farms[i].temperature = status[0].temperature;
+        this.farms[i].status = true;
       }
     }
   }
