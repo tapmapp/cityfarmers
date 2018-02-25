@@ -223,11 +223,11 @@ export class ChartComponent implements OnInit {
           this.lineChartLabels.push(formatValue(newTime.getHours()) + 'h');
 
           // REMOVE FIRST ELEMENT OF THE DATA ARRAY
-          if(this.lineChartData[0].data.length > 60) this.lineChartData[0].data.shift();
-          if(this.lineChartData[1].data.length > 60) this.lineChartData[1].data.shift();
+          if(this.lineChartData[0].data.length > 24) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 24) this.lineChartData[1].data.shift();
 
           // REMOVE FIRST ELEMENT OF THE TIME ARRAY
-          if(this.lineChartLabels.length > 60) this.lineChartLabels.shift();
+          if(this.lineChartLabels.length > 24) this.lineChartLabels.shift();
 
         }
 
@@ -253,11 +253,11 @@ export class ChartComponent implements OnInit {
           this.lineChartLabels.push(formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth()));
 
           // REMOVE FIRST ELEMENT OF THE DATA ARRAY
-          if(this.lineChartData[0].data.length > 60) this.lineChartData[0].data.shift();
-          if(this.lineChartData[1].data.length > 60) this.lineChartData[1].data.shift();
+          if(this.lineChartData[0].data.length > 31) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 31) this.lineChartData[1].data.shift();
 
           // REMOVE FIRST ELEMENT OF THE TIME ARRAY
-          if(this.lineChartLabels.length > 60) this.lineChartLabels.shift();
+          if(this.lineChartLabels.length > 31) this.lineChartLabels.shift();
 
         }
 
