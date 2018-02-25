@@ -40,7 +40,7 @@ import { TokenService } from './services/token/token.service';
 import { ROUTES } from './app.routes';
 
 // STYLES
-import '../styles.css';
+import '../assets/css/styles.css';
 
 @NgModule({
   bootstrap: [ AppComponent ],

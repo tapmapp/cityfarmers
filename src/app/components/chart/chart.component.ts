@@ -358,11 +358,11 @@ export class ChartComponent implements OnInit {
 
     if(this.selectedDataPeriod == 'hours') {
 
-      // 24 HOURS IN MILLY SECONDS
-      const dayMilly = 24 * 3600 * 1000;
+      // CREATE TODAY DATE OBJECT
+      let actualDate = new Date(lastTime);
 
       // CALCULATING INTERVAL
-      fromTime = new Date(lastTime - dayMilly).getTime();
+      fromTime = new Date(actualDate.getFullYear(), actualDate.getMonth(), actualDate.getDate(), 0, 0, 0).getTime();
       
     }
 
