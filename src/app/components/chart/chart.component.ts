@@ -284,7 +284,7 @@ export class ChartComponent implements OnInit {
   // SET CHART DATA
   setChartData() {
 
-    if (this.farm.length == 0) {
+    if(this.farm.length == 0) {
 
       setTimeout(() => {
         this.setChartData();
@@ -376,7 +376,6 @@ export class ChartComponent implements OnInit {
 
     }
     
-
     let chartDateLength = this.allChartData.length;
 
     for(let i = 0; i < chartDateLength; i++) {
@@ -411,7 +410,7 @@ export class ChartComponent implements OnInit {
 
         if(this.selectedDataPeriod == 'days') {
           
-          let newTimeFormat = formatValue(newTime.getDate()) + '/' + formatValue(newTime.getMonth());
+          let newTimeFormat = formatValue(newTime.getDate()) + '/' + formatValue((newTime.getMonth() + 1));
 
           if(dataPeriod[newTimeFormat] !== undefined) {
             dataPeriod[newTimeFormat].push({ temp: this.allChartData[i].temperature, hum: this.allChartData[i].humidity });

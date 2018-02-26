@@ -149,8 +149,8 @@ export class FarmerComponent implements OnInit {
       farms[i].status = false;
       farms[i].humidity = 0;
       farms[i].temperature = 0;
-      
-      var chartData: Array<any> = this.localStorage.get('chartData-' + farms[i]._id);
+      /*
+      var chartData: any = this.localStorage.get('chartData-' + farms[i]._id);
       
       if(chartData) {
         
@@ -186,7 +186,7 @@ export class FarmerComponent implements OnInit {
 
         this.chartService.getChartData(farms[i]._id, formatFromDate, formatToDate);
 
-      }
+      }*/
       
     }
     

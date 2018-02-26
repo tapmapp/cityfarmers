@@ -40,7 +40,7 @@ export class FarmerService {
         this.error = this._error.asObservable();
         
         // GET FARMER
-        this.getFarmer(this.localStorage.get('farmerId'), this.localStorage.get('token'));
+        this.getFarmer(this.localStorage.get('farmerId').toString(), this.localStorage.get('token').toString());
 
     }
 

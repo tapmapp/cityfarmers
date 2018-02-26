@@ -85,7 +85,7 @@ export class FarmService {
         
         let headers = new Headers({ 
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + this.localStorage.get('token')
+            'Authorization': 'Bearer ' + this.localStorage.get('token').toString()
         });
 
         let options = new RequestOptions({ headers: headers });
@@ -105,6 +105,8 @@ export class FarmService {
             }
 
         }, err => {
+
+            console.log('ERROR!');
 
             // CLEAR TOKEN AND REDIRECT TO LOGIN
             this.tokenService.clearToken();
