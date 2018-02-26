@@ -56,6 +56,7 @@ export class FarmComponent implements OnInit {
   // TIMER VARIABLES
   hours: string = '0';
   minutes: string = '0';
+  timer = null;
 
   constructor(
     private farmService: FarmService,
@@ -67,10 +68,10 @@ export class FarmComponent implements OnInit {
     this.socket = io.connect('https://cityfarmers-api.herokuapp.com/' + this.localStorage.get('farmerId') );
 
     // FARMER NAME
-    this.farmerName = this.localStorage.get('farmerName');
+    this.farmerName = this.localStorage.get('farmerName').toString();
 
     // LAUNCH TIMER
-    this.timer();
+    this.clock();
 
   }
 
@@ -148,32 +149,96 @@ export class FarmComponent implements OnInit {
   // TEMPERATURE UP
   temperatureUp() {
     if(this.farm[0].temperatureVent < 42) {
+
       this.farm[0].temperatureVent += 1;
-      this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+
+      if(this.timer !== null) {
+
+        clearTimeout(this.timer);
+
+        this.timer = setTimeout(() => {
+          this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+        }, 1500);
+      
+      } else {
+
+        this.timer = setTimeout(() => {
+          this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+        }, 1500);
+
+      }
     }
   }
 
   // TEMPERATURE DOWN
   temperatureDown() {
     if(this.farm[0].temperatureVent > 18) {
+
       this.farm[0].temperatureVent -= 1;
-      this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+
+      if(this.timer !== null) {
+
+        clearTimeout(this.timer);
+
+        this.timer = setTimeout(() => {
+          this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+        }, 1500);
+      
+      } else {
+
+        this.timer = setTimeout(() => {
+          this.farmService.setTemperature(this.farm[0]._id, this.farm[0].temperatureVent);
+        }, 1500);
+
+      }
     }
   }
 
   // WATERING UP
   wateringUp() {
     if(this.farm[0].watering < 15) {
+
       this.farm[0].watering += 1;
-      this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+
+      if(this.timer !== null) {
+
+        clearTimeout(this.timer);
+
+        this.timer = setTimeout(() => {
+          this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+        }, 1500);
+      
+      } else {
+
+        this.timer = setTimeout(() => {
+          this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+        }, 1500);
+
+      }
     }
   }
 
   // WATERING DOWN
   wateringDown() {
     if(this.farm[0].watering > 1) {
+
       this.farm[0].watering -= 1;
-      this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+      
+      if(this.timer !== null) {
+
+        clearTimeout(this.timer);
+
+        this.timer = setTimeout(() => {
+          this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+        }, 1500);
+      
+      } else {
+
+        this.timer = setTimeout(() => {
+          this.farmService.setWatering(this.farm[0]._id, this.farm[0].watering);
+        }, 1500);
+
+      }
     }
   }
   
@@ -204,7 +269,7 @@ export class FarmComponent implements OnInit {
   }
 
   // TIMER FUNCTION
-  timer() {
+  clock() {
 
     const time = new Date();
 
@@ -225,7 +290,7 @@ export class FarmComponent implements OnInit {
     }
 
     setTimeout(() => {
-      this.timer();
+      this.clock();
     }, 1000);
 
   }
@@ -257,8 +322,23 @@ export class FarmComponent implements OnInit {
 
     this.farm[0].lightingOn = newHours + ':' + newMinutes;
 
-    // SET LIGHTING
-    this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+    if(this.timer !== null) {
+
+      clearTimeout(this.timer);
+
+      // SET LIGHTING
+      this.timer = setTimeout(() =>{
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff) 
+      }, 1500);
+
+    } else {
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff) 
+      }, 1500);
+      
+    }
 
   }
 
@@ -289,8 +369,23 @@ export class FarmComponent implements OnInit {
 
     this.farm[0].lightingOn = newHours + ':' + newMinutes;
 
-    // SET LIGHTING
-    this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+    if(this.timer !== null) {
+
+      clearTimeout(this.timer);
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    } else {
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    }
 
   }
 
@@ -321,9 +416,23 @@ export class FarmComponent implements OnInit {
 
     this.farm[0].lightingOff = newHours + ':' + newMinutes;
 
-    // SET LIGHTING
-    this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+    if(this.timer !== null) {
 
+      clearTimeout(this.timer);
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    } else {
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    }
 
   }
 
@@ -354,8 +463,23 @@ export class FarmComponent implements OnInit {
 
     this.farm[0].lightingOff = newHours + ':' + newMinutes;
 
-    // SET LIGHTING
-    this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+    if(this.timer !== null) {
+
+      clearTimeout(this.timer);
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    } else {
+
+      // SET LIGHTING
+      this.timer = setTimeout(() => {
+        this.farmService.setLighting(this.farmId, this.farm[0].lightingOn, this.farm[0].lightingOff);
+      }, 1500);
+
+    }
 
 
   }
