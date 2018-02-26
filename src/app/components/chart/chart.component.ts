@@ -223,11 +223,11 @@ export class ChartComponent implements OnInit {
           this.lineChartLabels.push(formatValue(newTime.getHours()) + 'h');
 
           // REMOVE FIRST ELEMENT OF THE DATA ARRAY
-          if(this.lineChartData[0].data.length > 24) this.lineChartData[0].data.shift();
-          if(this.lineChartData[1].data.length > 24) this.lineChartData[1].data.shift();
+          if(this.lineChartData[0].data.length > 23) this.lineChartData[0].data.shift();
+          if(this.lineChartData[1].data.length > 23) this.lineChartData[1].data.shift();
 
           // REMOVE FIRST ELEMENT OF THE TIME ARRAY
-          if(this.lineChartLabels.length > 24) this.lineChartLabels.shift();
+          if(this.lineChartLabels.length > 23) this.lineChartLabels.shift();
 
         }
 
@@ -359,7 +359,7 @@ export class ChartComponent implements OnInit {
     if(this.selectedDataPeriod == 'hours') {
 
       // 24 HOURS IN MILLY SECONDS
-      const dayMilly = 24 * 3600 * 1000;
+      const dayMilly = 23 * 3600 * 1000;
 
       // CALCULATING INTERVAL
       fromTime = new Date(lastTime - dayMilly).getTime();
