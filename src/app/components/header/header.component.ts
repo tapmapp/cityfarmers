@@ -21,8 +21,8 @@ export class HeaderComponent {
     private loginService: LoginService,
     private localStorage: LocalStorageService) {
 
-    this.farmerName = this.localStorage.get('farmerName');
-    this.farmerId = this.localStorage.get('farmerId');
+    this.farmerName = this.localStorage.get('farmerName').toString();
+    this.farmerId = this.localStorage.get('farmerId').toString();
 
   }
 

@@ -33,7 +33,7 @@ export class LoginComponent {
     private localStorage: LocalStorageService,
     private router: Router,
     private loginService: LoginService) {
-
+      
     if(this.localStorage.get('token')) {
       this.router.navigate(['farmer']);
     }

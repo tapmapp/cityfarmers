@@ -1,0 +1,13 @@
+.loader-container { height: calc(100vh - 64px); display: none; position: absolute; z-index: 1000; width: 100%; background-color: #fffdf6; }
+.loader-container.active { display: table; }
+.loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
+
+.farmers-container { padding: 50px 100px; }
+.farmers-container .farmer { height: 80px; border: 1px solid #e5ded7; padding: 25px 30px 0px 20px; width: 20%; float: left; font-family: Georgia, 'Times New Roman', Times, serif; background-color: white; margin: 0px 30px 0px 0px; cursor: pointer; }
+.farmers-container .farmer .fruit { width: 80px; position: relative; bottom: 12px; float: left; }
+.farmers-container .farmer h2 { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
+.farmers-container .farmer h2 span { float: right; display: inline-block; font-size: 12px; line-height: 24px; }
+.farmers-container .farmer h2 span img {float: left; width: initial; height: auto; margin: 0px 5px 0px 0px; position: relative; top: 3px; }
+.farmers-container .farmer ul { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px; }
+.farmers-container .farmer ul li { float: left; width: 33.3%; font-size: 12px; }
+.farmers-container .farmer ul li img { width: 12px; height: auto; margin: 0px 5px 0px 0px; float: left; }

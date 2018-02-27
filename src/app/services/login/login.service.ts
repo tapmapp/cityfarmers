@@ -43,7 +43,7 @@ export class LoginService {
             if(data.status == 200) {
 
                 var response = JSON.parse(data.text());
-                        
+
                 // SET TOKEN SESSION AND NAVIGATE TO FARMER PROFILE
                 this.tokenService.setToken(response);
 

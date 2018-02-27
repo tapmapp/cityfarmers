@@ -20,9 +20,10 @@ export class TokenService {
         private route: Router,
         private localStorage: LocalStorageService) {}
 
-    
+
     clearToken() {
 
+        // REMOVE TOKEN
         this.localStorage.remove('token');
         this.localStorage.remove('farmerId');
         this.localStorage.remove('farmerName');
@@ -30,10 +31,13 @@ export class TokenService {
         // REDIRECT TO LOGIN
         this.route.navigate(['login']);
 
+        // RELOAD WINDOW AND CLEAR ERRORS
+        window.location.reload();
+
     }
 
     setToken(response: any) {
-
+        
         // SET TOKEN
         this.localStorage.set('token', response.token);
         this.localStorage.set('farmerId', response.farmerId);

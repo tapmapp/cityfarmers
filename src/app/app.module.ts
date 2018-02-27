@@ -15,12 +15,14 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './components/chart';
 import { FarmerComponent } from './components/farmer';
+import { FarmersComponent } from './components/farmers';
+import { FarmComponent } from './components/farm';
+import { FarmsComponent } from './components/farms';
 import { FooterComponent } from './components/footer';
 import { HeaderComponent } from './components/header';
 import { HomeComponent } from './components/home';
 import { HomeNavComponent } from './components/home-nav';
 import { LoginComponent } from './components/login';
-import { FarmComponent } from './components/farm';
 import { SocketComponent } from './components/socket';
 
 // SERVICES
@@ -35,12 +37,11 @@ import { NoteService } from './services/note/note.service';
 import { SocketService } from './services/socket/socket.service';
 import { TokenService } from './services/token/token.service';
 
-
 // ROUTES
 import { ROUTES } from './app.routes';
 
 // STYLES
-import '../styles.css';
+import '../assets/css/styles.css';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -48,12 +49,14 @@ import '../styles.css';
     AppComponent,
     ChartComponent,
     FarmerComponent,
+    FarmersComponent,
+    FarmComponent,
+    FarmsComponent,
     FooterComponent,
     HeaderComponent,
     HomeComponent,
     HomeNavComponent,
     LoginComponent,
-    FarmComponent,
     SocketComponent
   ],
   imports: [

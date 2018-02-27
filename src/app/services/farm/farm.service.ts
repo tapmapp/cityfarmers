@@ -21,6 +21,11 @@ export class FarmService {
     private _farm: BehaviorSubject<Array<Farm>>;
     private farmStore: { farm: Array<Farm> };
 
+    // FARM OBSERVABLE SERVICE CONFIGURATION VARIABLES
+    farms: Observable<Array<Farm>>;
+    private _farms: BehaviorSubject<Array<Farm>>;
+    private farmsStore: { farms: Array<Farm> };
+
     // ERROR OBSERVABLE SERVICE CONFIGURATION VARIABLES
     error: Observable<String>;
     private _error: BehaviorSubject<String>;
@@ -38,10 +43,18 @@ export class FarmService {
         this._farm = new BehaviorSubject(this.farmStore.farm);
         this.farm = this._farm.asObservable();
 
+        // FARMS INITIALIZATION VARIABLES
+        this.farmsStore = { farms: [] };
+        this._farms = new BehaviorSubject(this.farmsStore.farms);
+        this.farms = this._farms.asObservable();
+
         // ERROR INITIALIZATION VARIABLES
         this.errorStore = { error: '' };
         this._error = new BehaviorSubject(this.errorStore.error);
         this.error = this._error.asObservable();
+
+        // GET ALL FARMS
+        this.getAllFarms();
 
         // GET FARMER
         this.getFarms(this.localStorage.get('farmerId').toString());
@@ -80,12 +93,44 @@ export class FarmService {
 
     }
 
+    // GET ALL FARMS
+    getAllFarms():void {
+
+        let headers = new Headers({ 
+            'Content-Type': 'application/json'
+        });
+
+        let options = new RequestOptions({ headers: headers });
+
+        // TRADE API URL
+        //let farmerFarmsUrl = Environment.environment.apiUrl + '/farm/farms';
+        let allFarmsUrl = 'https://cityfarmers-api.herokuapp.com/farm/';
+
+        this.http.post(allFarmsUrl, {}, options).subscribe(data => {
+            
+            if(data.status == 200) {
+
+                // SENDING FARMS TO SUBSCRIBERS
+                this.farmsStore.farms = JSON.parse(data.text());
+                this._farms.next(this.farmsStore.farms);
+
+            }
+
+        }, err => {
+
+            // CLEAR TOKEN AND REDIRECT TO LOGIN
+            this.tokenService.clearToken();
+
+        });
+
+    }
+
     // GET FARMS
     getFarms(farmerId: string): void {
-        
+
         let headers = new Headers({ 
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + this.localStorage.get('token')
+            'Authorization': 'Bearer ' + this.localStorage.get('token').toString()
         });
 
         let options = new RequestOptions({ headers: headers });

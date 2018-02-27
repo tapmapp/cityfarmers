@@ -50,21 +50,22 @@ export class ChartService {
             if(data.status == 200) {
 
                 var response = JSON.parse(data.text());
-                var chartData: Array<Environment> = this.localStorage.get('chartData-' + farmId);
+                var chartDataObj: Object = this.localStorage.get('chartData-' + farmId);
 
-                if(chartData !== null) {
+                if(chartDataObj !== null) {
+
+                    let chartData: Array<Environment> = JSON.parse(this.localStorage.get('chartData-' + farmId).toString());
 
                     if(response.length > 0) {
 
                         for(let i = 0; i < response.length; i++) {
-                            let newTime = new Date(chartData[i].date);
                             chartData.push(response[i]);
                         }        
 
                     }
 
                     // SAVE CHART DATA ON LOCAL STORAGE
-                    this.localStorage.set('chartData-' + farmId, chartData);                
+                    this.localStorage.set('chartData-' + farmId, JSON.stringify(chartData));                
 
                     // SEND CHART DATA TO SUBSCRIBERS
                     this.chartDataStore.chartData = chartData;
@@ -73,7 +74,7 @@ export class ChartService {
                 } else {
 
                     // SAVE CHART DATA ON LOCAL STORAGE
-                    this.localStorage.set('chartData-' + farmId, response);
+                    this.localStorage.set('chartData-' + farmId, JSON.stringify(response));
 
                     // SEND CHART DATA TO SUBSCRIBERS
                     this.chartDataStore.chartData = response;
