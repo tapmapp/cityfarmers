@@ -1,0 +1,23 @@
+<socket></socket>
+<header></header>
+<div class="loader-container" [ngClass]="{'active': loaderStatus }">
+    <div class="loader">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    </div>
+</div>
+<div class="farm-info-container" *ngIf="farm">
+    <div class="farm-info">
+        <img src="/assets/img/{{ farm.img }}"/>
+        <h1>{{ farm.name }}</h1>
+    </div>
+    <div class="farm-content">
+        <h1>Farmers Involded</h1>
+        <a [routerLink]="['/farmers', farmer._id]" *ngFor="let farmer of farm.farmer">
+            <div class="farmer">
+                <img src="/assets/img/{{farmer.img}}"/>
+                <h3>{{ farmer.name }}</h3>
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ farmer.city }}, {{ farmer.country }}</p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body { background-color: #fffdf6; font-family: 'Arial'; margin: 0px; color: #333; }
-h1, h2, h3 { font-family: 'Josefin Slab', serif; color: #929265; }
+body { background-color: #fffdf6; font-family: Georgia, 'Times New Roman', Times, serif; margin: 0px; color: #333; }
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', Times, serif; color: #333; font-weight: normal; }
 ul { list-style: none; padding: 0px; }
 a { text-decoration: none; color: #333; }

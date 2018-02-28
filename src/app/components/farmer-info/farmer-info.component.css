@@ -1,0 +1,17 @@
+.loader-container { height: calc(100vh - 64px); display: none; position: absolute; z-index: 1000; width: 100%; background-color: #fffdf6; }
+.loader-container.active { display: table; }
+.loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
+
+.farmer-info-container { padding: 50px 100px; }
+.farmer-info-container .farmer-info { width: 30%; float: left; }
+.farmer-info-container .farmer-info img { width: 100px; }
+.farmer-info-container .farmer-content { width: 70%; float: left; }
+.farmer-info-container .farmer-content .farm-container { overflow: hidden; background-color: #f7f5ee; padding: 10px 10px 10px 10px; width: 350px; margin: 0px 0px 5px 0px; }
+.farmer-info-container .farmer-content img { width: 60px; float: left; margin: 0px 10px 0px 0px; }
+
+.farmer-info-container .farmer-content .farm-container .farm h2 { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
+.farmer-info-container .farmer-content .farm-container .farm h2 span { float: right; display: inline-block; font-size: 12px; line-height: 24px; }
+.farmer-info-container .farmer-content .farm-container .farm h2 span img {float: left; width: initial; height: auto; margin: 0px 5px 0px 0px; position: relative; top: 3px; }
+.farmer-info-container .farmer-content .farm-container .farm ul { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px; }
+.farmer-info-container .farmer-content .farm-container .farm ul li { float: left; width: 33.3%; font-size: 12px; }
+.farmer-info-container .farmer-content .farm-container .farm ul li img { width: 12px; height: auto; margin: 0px 5px 0px 0px; float: left; }

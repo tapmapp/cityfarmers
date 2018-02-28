@@ -43,8 +43,8 @@ export class FarmComponent implements OnInit {
 
   socket: SocketIOClient.Socket;
 
-  fanStatus: Boolean = false;
-  wateringStatus: Boolean = false;
+  fanStatus: Boolean = true;
+  wateringStatus: Boolean = true;
 
   // LIGHTING VARIABLES
   hoursOn: string = '0';

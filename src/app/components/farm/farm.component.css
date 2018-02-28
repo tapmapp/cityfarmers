@@ -1,7 +1,9 @@
+
+
 .content-container { width: 100%; background-color: #fffdf6; height: 50px; }
 .content-container .chart-container { height: calc(65vh - 60px); background-color: #fffdf6; }
 
-.content-container .farms-container { height: calc(35vh - 5px); padding: 0px 50px; border-top: 1px solid #d4cbb2; background-image: url('/assets/img/wood-texture.jpg'); }
+.content-container .farms-container { height: calc(35vh - 5px); padding: 0px 50px; border-top: 1px solid #d4cbb2; background-image: url('/assets/img/wood-texture.jpg');  }
 .content-container .farms-container h2 { color: #808058; margin: 60px 0px 30px 0px; }
 .content-container .farms-container h2 img { width: 30px; padding: 0px 15px 0px 0px; position: relative; top: 8px; }
 .content-container .farms-container .container { width: 20%; float: left; } 

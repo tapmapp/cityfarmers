@@ -17,7 +17,9 @@ import { ChartComponent } from './components/chart';
 import { FarmerComponent } from './components/farmer';
 import { FarmersComponent } from './components/farmers';
 import { FarmComponent } from './components/farm';
+import { FarmInfoComponent } from './components/farm-info';
 import { FarmsComponent } from './components/farms';
+import { FarmerInfoComponent } from './components/farmer-info';
 import { FooterComponent } from './components/footer';
 import { HeaderComponent } from './components/header';
 import { HomeComponent } from './components/home';
@@ -52,6 +54,8 @@ import '../assets/css/styles.css';
     FarmersComponent,
     FarmComponent,
     FarmsComponent,
+    FarmInfoComponent,
+    FarmerInfoComponent,
     FooterComponent,
     HeaderComponent,
     HomeComponent,

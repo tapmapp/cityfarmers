@@ -1,0 +1,16 @@
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #333; }
+
+.loader-container { height: calc(100vh - 64px); display: none; position: absolute; z-index: 1000; width: 100%; background-color: #fffdf6; }
+.loader-container.active { display: table; }
+.loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
+
+.farm-info-container { padding: 50px 100px; } 
+.farm-info-container .farm-info { width: 30%; float: left; }
+.farm-info-container .farm-info img { width: 100px; }
+.farm-info-container .farm-info h2 { color: #333; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: normal; }
+
+.farm-info-container .farm-content { float: left; }
+.farm-info-container .farm-content .farmer { overflow: hidden; background-color: #f7f5ee; padding: 10px 10px 10px 10px; width: 350px; }
+.farm-info-container .farm-content .farmer h3 { font-size: 16px; margin: 0px 0px 5px 0px; padding: 10px 0px 0px 0px; }
+.farm-info-container .farm-content .farmer p { font-size: 12px; margin: 0px; }
+.farm-info-container .farm-content .farmer img { width: 60px; float: left; margin: 0px 25px 0px 0px; }

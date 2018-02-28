@@ -2,12 +2,12 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.profile-container { float: left; width: 20%; }
+.profile-container { float: left; width: 25%; }
 .profile-container .farmer-info { font-family: 'Josefin Slab', serif; margin: 30px 0px 0px 50px; }
 .profile-container .farmer-info .img { margin: 0px 0px 30px 0px; }
 .profile-container .farmer-info .info { padding: 0px 60px; color: #929265; line-height: 24px; font-size: 18px; font-weight: bold; }
 
-.farms-container { float: left; width: 55%; }
+.farms-container { float: left; width: 75%; font-family: Arial; }
 .farms-container h2 { margin: 30px 0px 30px 0px; }
 .farms-container .farm span { display: inline-block; width: 70px; text-align: right; }
 .farms-container .farm .connection i { color: #c5c1a3; }
