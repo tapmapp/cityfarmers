@@ -20,7 +20,7 @@ import { Environment } from '../../interfaces/environment';
 @Component({
   selector: 'farms',
   providers: [],
-  styleUrls: [ './farms.component.css' ],
+  styleUrls: [ './farms.component.css', 'farms-resp.component.css' ],
   templateUrl: './farms.component.html'
 })
 export class FarmsComponent implements OnInit {

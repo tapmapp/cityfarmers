@@ -6,19 +6,21 @@
     </div>
 </div>
 <div class="farms-container">
-    <div class="farm" *ngFor="let farm of farms">
-        <img src="/assets/img/{{farm.img}}" class="fruit"/>
-        <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
-        <ul>
-            <li>
-                <img src="/assets/img/farmer.png"/> {{ farm.farmer.length }}
-            </li>
-            <li>
-                <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
-            </li>
-            <li>
-                <img src="/assets/img/harvest.png"/> {{ farm.harvest }} days
-            </li>
-        </ul>
+    <div class="farm-container" *ngFor="let farm of farms">
+        <div class="farm">
+            <img src="/assets/img/{{farm.img}}" class="fruit"/>
+            <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
+            <ul>
+                <li>
+                    <img src="/assets/img/farmer.png"/> {{ farm.farmer.length }}
+                </li>
+                <li>
+                    <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
+                </li>
+                <li>
+                    <img src="/assets/img/harvest.png"/> {{ farm.harvest }} days
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
