@@ -40,7 +40,6 @@ export class FarmInfoComponent implements OnInit {
     // ROUTE PARAM SUBSCRIBER
     this.routeSubscriber = this.route.params.subscribe(params => {
       this.farmId = params.farmId;
-      this.loaderStatus = false;
     });
 
     // FARMS SUBSCRIBER
@@ -50,7 +49,7 @@ export class FarmInfoComponent implements OnInit {
         for(let i = 0; i < data.length; i++) {
           if(this.farmId == data[i]._id) {
             this.farm = data[i];
-            console.log(this.farm);
+            this.loaderStatus = false;
           }
         }
       }

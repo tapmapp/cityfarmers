@@ -32,7 +32,7 @@
                     <li><i class="fa fa-tint" aria-hidden="true"></i> <span>{{ farm.humidity }} %</span></li>
                     <li><i class="fa fa-sun-o" aria-hidden="true"></i> {{ farm.lightingOn }}</li>
                     <li><i class="fa fa-moon-o" aria-hidden="true"></i> {{ farm.lightingOff }}</li>
-                    <li><img src="/assets/img/fan.png" class="fan"> <span>{{ farm.temperatureVent }} ºC</span></li>
+                    <li class="fan"><img src="/assets/img/fan.png" > <span>{{ farm.temperatureVent }} ºC</span></li>
                     <li><img src="/assets/img/watering-icon.png" class="watering"> <span class="mins">{{ farm.watering }} min</span></li>
                     <li class="connection" [ngClass]="{ 'active' : farm.status }">
                         <i class="fa fa-wifi" aria-hidden="true"></i>

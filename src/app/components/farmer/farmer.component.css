@@ -25,7 +25,8 @@
 
 .farm ul { border: 1px solid #c5c1a3; background-image: url('/assets/img/wood-background.png'); height: 60px; border-radius: 5px; padding: 0px 0px 0px 25px; display: inline-block; margin: 0px 0px 10px 0px; } 
 .farm ul li { float: left; color: #808058; height: 60px; font-size: 21px; font-weight: bold; line-height: 60px; padding: 0px 25px 0px 0px;}
-.farm ul li .fan { width: 19px; position: relative; top: 1px; }
+.farm ul .fan img { width: 19px; position: relative; top: 1px; }
+.farm ul .fan span { width: 55px; }
 .farm ul li .watering { width: 17px; position: relative; top: 2px; }
 .farm ul .connection { font-size: 21px; }
 .farm ul .name { font-size: 16px; }
