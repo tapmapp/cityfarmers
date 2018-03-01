@@ -2,7 +2,7 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.farmer-info-container { padding: 50px 100px; }
+.farmer-info-container { padding: 50px 100px; height: calc(100vh - 60px); }
 .farmer-info-container .farmer-info { width: 30%; float: left; }
 .farmer-info-container .farmer-info img { width: 100px; }
 .farmer-info-container .farmer-info ul li { margin: 10px 0px; }

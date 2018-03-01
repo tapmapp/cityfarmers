@@ -22,10 +22,13 @@
             <li class="harvest">
                 <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ farm.harvest }} days
             </li>
+            <li>
+                <span><i class="fa fa-refresh" aria-hidden="true"></i></span> Financing
+            </li>
         </ul>
     </div>
     <div class="farm-content">
-        <h1>Farmers Involded</h1>
+        <h1>Farmers involded</h1>
         <a [routerLink]="['/farmers', farmer._id]" *ngFor="let farmer of farm.farmer">
             <div class="farmer">
                 <img src="/assets/img/{{farmer.img}}"/>
@@ -34,4 +37,18 @@
             </div>
         </a>
     </div>
+    <div class="farm-status">
+        <h1>Farm status</h1>
+        <ul>
+            <li>
+                <span class="percent">60%</span>
+                <br/>
+                <span class="completed">Completed</span>
+            </li>
+            <li class="amount-left">0.43 ETH - 200.24$ left</li>
+            <li><input type="number"/><span class="btn">Invest</span></li>
+            <li class="eth-price">1 ETH = 1400.86 €</li>
+        </ul>
+    </div>
 </div>
+<footer-app></footer-app>
