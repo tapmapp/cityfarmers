@@ -2,4 +2,5 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.contact-container { padding: 50px 100px; height: calc(100vh - 60px);}
+.contact-container { padding: 50px 100px; height: calc(100vh - 60px); }
+.contact-container h1 { margin: 0px 0px 30px 0px; }
