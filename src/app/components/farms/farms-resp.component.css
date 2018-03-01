@@ -1,13 +1,12 @@
 @media (min-width: 900px) and (max-width: 1440px) {
 
     .farms-container { padding: 50px 100px; }
-    .farms-container .farm-container { width: 30%; float: left; background-color: white; margin: 0px 5% 50px 0px; cursor: pointer;}
+    .farms-container .farm-container { width: 30%; float: left; margin: 0px 5% 50px 0px; cursor: pointer;}
     .farms-container .farm-container .farm { padding: 25px 30px 0px 20px;  font-family: Georgia, 'Times New Roman', Times, serif; }
     .farms-container .farm-container .farm .fruit { width: 80px; position: relative; bottom: 12px; float: left; }
-    .farms-container .farm-container .farm h2 { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
+    .farms-container .farm-container .farm h2 { float: left; width: 68%; padding: 0px 0px 0px 20px; margin: 0px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
     .farms-container .farm-container .farm h2 span { float: right; display: inline-block; font-size: 12px; line-height: 24px; }
-    .farms-container .farm-container .farm h2 span img {float: left; width: initial; height: auto; margin: 0px 5px 0px 0px; position: relative; top: 3px; }
-    .farms-container .farm-container .farm ul { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px; }
+    .farms-container .farm-container .farm ul { float: left; width: 68%; padding: 0px 0px 0px 20px; margin: 0px 0px; }
     .farms-container .farm-container .farm ul li { float: left; width: 33.3%; font-size: 12px; }
     .farms-container .farm-container .farm ul li img { width: 12px; height: auto; margin: 0px 5px 0px 0px; float: left; }
 

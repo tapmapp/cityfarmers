@@ -50,7 +50,9 @@ export class FarmerInfoComponent implements OnInit {
       if(data.length > 0) {
         for(let i = 0; i < data.length; i++) {
           if(this.farmerId == data[i]._id) {
+            
             this.farmer = data[i];
+            console.log(this.farmer);
           }
         }
       }

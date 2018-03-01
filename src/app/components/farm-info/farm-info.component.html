@@ -9,6 +9,20 @@
     <div class="farm-info">
         <img src="/assets/img/{{ farm.img }}"/>
         <h1>{{ farm.name }}</h1>
+        <ul>
+            <li>
+                <span><img src="/assets/img/seeds.png"/></span> {{ farm.created | date: "dd/MM/yy" }}
+            </li>
+            <li>
+                <span><i class="fa fa-users" aria-hidden="true"></i></span> {{ farm.farmer.length }} farmer
+            </li>
+            <li>
+                <span><img src="/assets/img/weight.png"/></span> {{ farm.avgWeight }} kg
+            </li>
+            <li class="harvest">
+                <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ farm.harvest }} days
+            </li>
+        </ul>
     </div>
     <div class="farm-content">
         <h1>Farmers Involded</h1>

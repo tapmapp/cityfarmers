@@ -6,66 +6,68 @@
     </div>
 </div>
 <div class="profile-container">
-    <ul *ngFor="let farmer of farmer" class="farmer-info">
-        <li class="img">
-            <img src="/assets/img/{{ farmer._id }}.png">
-        </li>
-        <li class="info">
-            {{ farmer.name }}
-        </li>
-        <li class="info">
-            {{ farmer.birth }}
-        </li>
-        <li class="info">
-            {{ farmer.city }}, {{ farmer.country}}
-        </li>
-    </ul>
-</div>
-<div class="farms-container">
-    <h2>My Farms</h2>
-    <div *ngFor="let farm of farms" class="farm">
-        <a [routerLink]="['/farm', farm._id]">
-            <ul>
-                <li class="name">{{farm.name}}</li>
-                <li><i class="fa fa-thermometer-half" aria-hidden="true"></i> <span>{{ farm.temperature }} ºC</span></li>
-                <li><i class="fa fa-tint" aria-hidden="true"></i> <span>{{ farm.humidity }} %</span></li>
-                <li><i class="fa fa-sun-o" aria-hidden="true"></i> {{ farm.lightingOn }}</li>
-                <li><i class="fa fa-moon-o" aria-hidden="true"></i> {{ farm.lightingOff }}</li>
-                <li><img src="/assets/img/fan.png" class="fan"> <span>{{ farm.temperatureVent }} ºC</span></li>
-                <li><img src="/assets/img/watering-icon.png" class="watering"> <span class="mins">{{ farm.watering }} min</span></li>
-                <li class="connection" [ngClass]="{ 'active' : farm.status }">
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                </li>
-            </ul>
-        </a>
-    </div>
-
-    <div class="create-farm-container">
-        <h2>Create Farm</h2>
-        <ul>
-            <li>
-                <label [ngClass]="{'active': activeFarmName }">Farm name</label>
-                <br/>
-                <input type="text" [(ngModel)]="farmName" (focus)="focusFarmName()" (focusout)="focusOutFarmName()">
+    <div class="farmer-info">
+        <ul *ngFor="let farmer of farmer" >
+            <li class="img">
+                <img src="/assets/img/{{ farmer._id }}.png">
             </li>
-            <li>
-                <label [ngClass]="{'active': activeCity }">City</label>
-                <br/>
-                <input type="text" [(ngModel)]="farmCity" (focus)="focusCity()" (focusout)="focusOutCity()">
+            <li class="info">
+                {{ farmer.name }}
             </li>
-            <li>
-                <label [ngClass]="{'active': activeCountry }">Country</label>
-                <br/>
-                <input type="text" [(ngModel)]="farmCountry" (focus)="focusCountry()" (focusout)="focusOutCountry()">
+            <li class="info">
+                {{ farmer.birth }}
             </li>
-            <li (click)="createFarm()">
-                <span class="create-farm">
-                    Create
-                </span>
+            <li class="info">
+                {{ farmer.city }}, {{ farmer.country}}
             </li>
         </ul>
     </div>
+    <div class="farms-container">
+        <h1>My Farms</h1>
+        <div *ngFor="let farm of farms" class="farm">
+            <a [routerLink]="['/farm', farm._id]">
+                <ul>
+                    <li class="name">{{farm.name}}</li>
+                    <li><i class="fa fa-thermometer-half" aria-hidden="true"></i> <span>{{ farm.temperature }} ºC</span></li>
+                    <li><i class="fa fa-tint" aria-hidden="true"></i> <span>{{ farm.humidity }} %</span></li>
+                    <li><i class="fa fa-sun-o" aria-hidden="true"></i> {{ farm.lightingOn }}</li>
+                    <li><i class="fa fa-moon-o" aria-hidden="true"></i> {{ farm.lightingOff }}</li>
+                    <li><img src="/assets/img/fan.png" class="fan"> <span>{{ farm.temperatureVent }} ºC</span></li>
+                    <li><img src="/assets/img/watering-icon.png" class="watering"> <span class="mins">{{ farm.watering }} min</span></li>
+                    <li class="connection" [ngClass]="{ 'active' : farm.status }">
+                        <i class="fa fa-wifi" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </a>
+        </div>
 
+        <div class="create-farm-container">
+            <h2>Create Farm</h2>
+            <ul>
+                <li>
+                    <label [ngClass]="{'active': activeFarmName }">Farm name</label>
+                    <br/>
+                    <input type="text" [(ngModel)]="farmName" (focus)="focusFarmName()" (focusout)="focusOutFarmName()">
+                </li>
+                <li>
+                    <label [ngClass]="{'active': activeCity }">City</label>
+                    <br/>
+                    <input type="text" [(ngModel)]="farmCity" (focus)="focusCity()" (focusout)="focusOutCity()">
+                </li>
+                <li>
+                    <label [ngClass]="{'active': activeCountry }">Country</label>
+                    <br/>
+                    <input type="text" [(ngModel)]="farmCountry" (focus)="focusCountry()" (focusout)="focusOutCountry()">
+                </li>
+                <li (click)="createFarm()">
+                    <span class="create-farm">
+                        Create
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 <!--
 <div class="history-container">

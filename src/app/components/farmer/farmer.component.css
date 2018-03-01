@@ -2,8 +2,8 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.profile-container { float: left; width: 25%; }
-.profile-container .farmer-info { font-family: 'Josefin Slab', serif; margin: 30px 0px 0px 50px; }
+.profile-container { padding: 50px 100px; }
+.profile-container .farmer-info { font-family: 'Josefin Slab', serif; float: left; width: 25%; }
 .profile-container .farmer-info .img { margin: 0px 0px 30px 0px; }
 .profile-container .farmer-info .info { padding: 0px 60px; color: #929265; line-height: 24px; font-size: 18px; font-weight: bold; }
 
@@ -21,7 +21,7 @@
 .farms-container .create-farm-container input:focus { outline: -webkit-focus-ring-color auto 0px; }
 .farms-container .create-farm-container label { font-size: 12px; padding: 0px 10px; position: relative; top: 27px; transition: 1s; color: #797979; }
 .farms-container .create-farm-container label.active { top: 0px; font-size: 10px; }
-.farms-container .create-farm-container .create-farm { display: inline-block; background-color: #929265; color: #f1f1d0; padding: 8px 14px; border-radius: 3px;font-size: 12px; float: right; margin: 15px 0px; cursor: pointer; }
+.farms-container .create-farm-container .create-farm { display: inline-block; background-color: #929265; color: #f1f1d0; padding: 8px 14px; border-radius: 3px; font-size: 12px; float: right; margin: 15px 0px; cursor: pointer; }
 
 .farm ul { border: 1px solid #c5c1a3; background-image: url('/assets/img/wood-background.png'); height: 60px; border-radius: 5px; padding: 0px 0px 0px 25px; display: inline-block; margin: 0px 0px 10px 0px; } 
 .farm ul li { float: left; color: #808058; height: 60px; font-size: 21px; font-weight: bold; line-height: 60px; padding: 0px 25px 0px 0px;}
