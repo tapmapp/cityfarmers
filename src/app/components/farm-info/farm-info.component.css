@@ -13,8 +13,16 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', Times, serif; font-weight:
 .farm-info-container .farm-info ul li img { width: initial; }
 .farm-info-container .farm-info ul li.harvest img {position: relative; top: 3px; }
 
-.farm-info-container .farm-content { float: left; }
+.farm-info-container .farm-content { float: left; width: 40%; }
 .farm-info-container .farm-content .farmer { overflow: hidden; background-color: #f7f5ee; padding: 10px 10px 10px 10px; width: 350px; }
 .farm-info-container .farm-content .farmer h3 { font-size: 16px; margin: 0px 0px 5px 0px; padding: 10px 0px 0px 0px; }
 .farm-info-container .farm-content .farmer p { font-size: 12px; margin: 0px; }
 .farm-info-container .farm-content .farmer img { width: 60px; float: left; margin: 0px 25px 0px 0px; }
+
+.farm-info-container .farm-status { float: left; width: 30%; }
+.farm-info-container .farm-status ul { width: 200px; }
+.farm-info-container .farm-status ul li { text-align: right; }
+.farm-info-container .farm-status .percent { font-size: 80px; }
+.farm-info-container .farm-status .completed { font-size: 24px; } 
+.farm-info-container .farm-status .amount-left { font-size: 18px; }
+.farm-info-container .farm-status .eth-price { font-size: 12px; }

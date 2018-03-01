@@ -1,6 +1,6 @@
 @media (min-width: 900px) and (max-width: 1440px) {
     
-    .farmers-container { padding: 50px 100px; }
+
     .farmers-container .farmer-container { width: 30%; float: left; margin: 0px 5% 0px 0px; cursor: pointer; }
     .farmers-container .farmer-container .farmer .fruit { width: 80px; position: relative; bottom: 12px; float: left; }
     .farmers-container .farmer-container .farmer h2 { float: left; width: 68%; padding: 0px 0px 0px 20px; margin: 5px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }

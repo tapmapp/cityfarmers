@@ -3,7 +3,7 @@
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
 .farms-container { padding: 50px 100px; }
-.farms-container .farm-container { width: 20%; float: left; background-color: #f7f5ee; margin: 0px 5% 50px 0px; cursor: pointer;}
+.farms-container .farm-container { width: 30%; float: left; background-color: #f7f5ee; margin: 0px 5% 50px 0px; cursor: pointer;}
 .farms-container .farm-container:nth-child(3n) { margin: 0px 0px 30px 0px; }
 .farms-container .farm-container .farm { padding: 25px 30px 0px 20px;  font-family: Georgia, 'Times New Roman', Times, serif; overflow: hidden;}
 .farms-container .farm-container .farm .fruit { width: 80px; position: relative; bottom: 12px; float: left; }

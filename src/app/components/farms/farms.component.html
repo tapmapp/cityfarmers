@@ -6,8 +6,9 @@
     </div>
 </div>
 <div class="farms-container">
-    <div class="farm-container" *ngFor="let farm of farms">
-        <a [routerLink]="['/farms', farm._id]">
+    <h1>Farms</h1>
+    <a [routerLink]="['/farms', farm._id]" *ngFor="let farm of farms">
+        <div class="farm-container" >
             <div class="farm">
                 <img src="/assets/img/{{farm.img}}" class="fruit"/>
                 <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
@@ -29,6 +30,6 @@
                     </li>
                 </ul>-->
             </div>
-        </a>
-    </div>
+        </div>
+    </a>
 </div>

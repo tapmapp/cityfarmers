@@ -13,6 +13,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
+import { ContactComponent } from './components/contact';
 import { ChartComponent } from './components/chart';
 import { FarmerComponent } from './components/farmer';
 import { FarmersComponent } from './components/farmers';
@@ -49,6 +50,7 @@ import '../assets/css/styles.css';
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
+    ContactComponent,
     ChartComponent,
     FarmerComponent,
     FarmersComponent,
