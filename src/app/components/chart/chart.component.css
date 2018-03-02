@@ -2,7 +2,7 @@
 .loader-container.active { display: table; }
 .loader { display: table-cell; vertical-align: middle; color: #333; }
 
-.chart-menu { position: absolute; top: 55px; width: 100%; }
+.chart-menu { position: absolute; top: 55px; width: 100%; font-family: Arial; }
 .chart-menu .chart-legend { float: right; padding: 0px 90px 0px 0px; }
 .chart-menu .chart-legend li { float: left; font-size: 12px; padding: 0px 15px 0px 0px; }
 .chart-menu .chart-legend li i { padding: 0px 4px 0px 0px; }
@@ -10,7 +10,7 @@
 .chart-menu .chart-legend .humidity i { color: #0078a0; }
 
 .chart-menu .chart-period { float: right; padding: 0px 35px 0px 0px; }
-.chart-menu .chart-period li { float: left; font-size: 12px; padding: 0px 15px 0px 0px; cursor: pointer; width: 60px; text-align: left;}
+.chart-menu .chart-period li { float: left; font-size: 12px; padding: 0px 15px 0px 0px; cursor: pointer; width: 70px; text-align: left;}
 .chart-menu .chart-period li i { color: #fffdf6; }   
 .chart-menu .chart-period li.active i { color: #424241; float: left; padding: 0px 4px 0px 0px; line-height: 15px; }
 .chart-menu .chart-period li.active { font-weight: bold; }

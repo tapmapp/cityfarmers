@@ -4,7 +4,7 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', Times, serif; font-weight:
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.farm-info-container { padding: 50px 100px; } 
+.farm-info-container { padding: 50px 100px; height: calc(100vh - 60px); } 
 .farm-info-container .farm-info { width: 30%; float: left; }
 .farm-info-container .farm-info img { width: 100px; }
 .farm-info-container .farm-info h2 { color: #333; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: normal; }
@@ -13,16 +13,26 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', Times, serif; font-weight:
 .farm-info-container .farm-info ul li img { width: initial; }
 .farm-info-container .farm-info ul li.harvest img {position: relative; top: 3px; }
 
-.farm-info-container .farm-content { float: left; width: 40%; }
-.farm-info-container .farm-content .farmer { overflow: hidden; background-color: #f7f5ee; padding: 10px 10px 10px 10px; width: 350px; }
-.farm-info-container .farm-content .farmer h3 { font-size: 16px; margin: 0px 0px 5px 0px; padding: 10px 0px 0px 0px; }
+.farm-info-container .farm-content { float: left; width: 50%; }
+.farm-info-container .farm-content .farmer { overflow: hidden; background-color: #f7f5ee; padding: 15px; width: 350px; border-top: 1px solid #fffdf6; border-bottom: 1px solid #e6e6e6; }
+.farm-info-container .farm-content .farmer h3 { font-size: 16px; margin: 0px 0px 0px 0px; padding: 10px 0px 0px 0px; }
 .farm-info-container .farm-content .farmer p { font-size: 12px; margin: 0px; }
 .farm-info-container .farm-content .farmer img { width: 60px; float: left; margin: 0px 25px 0px 0px; }
 
-.farm-info-container .farm-status { float: left; width: 30%; }
-.farm-info-container .farm-status ul { width: 200px; }
-.farm-info-container .farm-status ul li { text-align: right; }
+.farm-info-container .farm-status { float: left; width: 20%; }
 .farm-info-container .farm-status .percent { font-size: 80px; }
 .farm-info-container .farm-status .completed { font-size: 24px; } 
+.farm-info-container .farm-status .invest li { width: 100%; display: inline-block; }
+.farm-info-container .farm-status .invest input { font-size: 16px; height: 28px; border: 1px solid #ccc; border-right: 0px; padding: 3px 10px; width: 108px; float: left; text-align: right; } 
+.farm-info-container .farm-status .invest span { float: left; color: white; background-color: #919165; height: 36px; width: 50px; padding: 0px 10px; font-weight: normal; line-height: 36px; text-align: center; margin: 0px 0px 5px 0px; cursor: pointer; }
 .farm-info-container .farm-status .amount-left { font-size: 18px; }
-.farm-info-container .farm-status .eth-price { font-size: 12px; }
+.farm-info-container .farm-status .eth-price { font-size: 12px; padding: 0px 0px 0px 98px; }
+
+.farm-info-container .farm-status .costs { width: 300px; }
+.farm-info-container .farm-status .costs li { line-height: 24px; }
+.farm-info-container .farm-status .costs-list { width: 300px; }
+.farm-info-container .farm-status .costs-list li { margin: 0px 0px 10px 0px; }
+.farm-info-container .farm-status .costs-list li i { font-size: 14px; margin: 0px 5px 0px 0px; }
+.farm-info-container .farm-status .costs-list .fa-check { color: green; } 
+.farm-info-container .farm-status .costs-list .fa-times { color: red; } 
+
