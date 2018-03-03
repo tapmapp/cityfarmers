@@ -1,8 +1,14 @@
-.home-container { margin: 50px auto; padding: 50px 100px; }
+.slider-container { margin: 50px auto 0px auto; height: calc(100vh - 100px); }
+.slider-container .slider-content { padding: 50px 200px; }
+.slider-container .slider-content .slider-info { width: 60%; float: left; } 
+.slider-container .slider-content .slider-info .info h1 { font-size: 42px; }
+.slider-container .slider-content .slider-img { width: 40%; float: left; }
+
+.home-container { margin: 0px auto; padding: 100px 100px 0px 100px; }
 .home-container .invest-content { padding: 0px 100px; display: inline-block; }
 .home-container .invest-content h1 { text-align: center; font-size: 42px; margin: 0px 0px 50px 0px; }
-.home-container .invest-content .invest-box { float: left; width: 50%; }
-.home-container .invest-content .invest-box:nth-child(3n - 1) { background-color: #f9f4eb; }
+.home-container .invest-content .invest-box { float: left; width: 50%; background-color: white; }
+.home-container .invest-content .invest-box:nth-child(3n - 1) { background-color: #f9f7f2; }
 .home-container .invest-content .invest-box .investment { padding: 80px 100px; }
 .home-container .invest-content .invest-box .investment h2 { font-size: 28px; margin: 0px 0px 10px 0px; }
 .home-container .invest-content .invest-box .investment p { height: 180px; }
@@ -10,8 +16,8 @@
 .home-container .invest-content .investment .invest-img { width: 40%; float: left; text-align: center; }
 .home-container .invest-content .investment .invest-img img { position: relative; bottom: 30px; left: 50px; }
 
-.app-container { width: 100%; display: inline-block; }
-.app-container .app-content { padding: 50px 200px; height: 50vh; }
+.app-container { width: 100%; }
+.app-container .app-content { padding: 100px 200px; display: inline-block;}
 .app-container .app-info { width: 50%; float: left; }
 .app-container .app-info .info { padding: 80px 100px; width: 60% }
 .app-container .app-info .info p { width: 80%; line-height: 24px; }

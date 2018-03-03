@@ -1,11 +1,11 @@
 .footer-container { display: inline-block; width: 100%; }
-.footer-container .footer-content { padding: 50px 100px;  height: 240px; }
+.footer-container .footer-content { padding: 0px 100px; height: 340px; }
 .footer-container ul { width: 22%; float: left; }
 .footer-container .logo { width: 34%}
 .footer-container .logo h2 { color: #929265; font-family: 'Josefin Slab', serif; font-weight: bold; font-size: 28px; }
 .footer-container .info { margin: 40px 0px 0px 0px; }
 .footer-container .info.contact { width: 200px;}
-.footer-container .info input { width: 200px; line-height: 28px; padding: 3px 10px; border: 1px solid #e6e3d8; }
-.footer-container .info textarea { width: 200px; line-height: 28px; height: 60px; padding: 3px 10px; border: 1px solid #e6e3d8; background-color: #ffffff; }
+.footer-container .info input { width:  100%; line-height: 28px; padding: 3px 10px; border: 1px solid #e6e3d8; }
+.footer-container .info textarea { width: 100%; line-height: 28px; height: 60px; padding: 3px 10px; border: 1px solid #e6e3d8; background-color: #ffffff; }
 .footer-container .info .send span { float: right; color: white; background-color: #919165; height: 32px; width: 60px; text-align: center; line-height: 32px; font-size: 14px; }
 .footer-container ul li { margin: 0px 0px 10px 0px; width: 222px; cursor: pointer; }
