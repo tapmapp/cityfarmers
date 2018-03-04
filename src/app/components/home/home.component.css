@@ -1,22 +1,36 @@
-.slider-container { margin: 50px auto 0px auto; height: calc(100vh - 100px); }
+.slider-container { margin: 0px auto 0px auto; background-color: #f9f7f3; height: calc(100vh - 105px); }
 .slider-container .slider-content { padding: 50px 200px; }
-.slider-container .slider-content .slider-info { width: 60%; float: left; } 
+.slider-container .slider-content .slider-info { width: 55%; float: left; } 
 .slider-container .slider-content .slider-info .info h1 { font-size: 42px; }
+.slider-container .slider-content .slider-info .info h3 { line-height: 24px;  }
+.slider-container .slider-content .slider-info .info .become-farmer { padding: 10px 15px; color: white; background-color: #919165; float: right; margin: 30px 0px 0px 0px; cursor: pointer; }
 .slider-container .slider-content .slider-img { width: 40%; float: left; }
+
+.how-it-works{ margin: 0px auto; padding: 100px 100px 0px 100px; }
+.how-it-works .content { display: inline-block; width: 100%; }
+.how-it-works .content h1 { text-align: center; font-size: 42px; margin: 0px 0px 50px 0px; }
+.how-it-works .content .box { width: 33.3%; float: left; }
+.how-it-works .content .box .info { padding: 30px 50px 80px 50px; height: 380px; background-color: white; }
+.how-it-works .content .box .info h2 span { text-align: center;display: inline-block; width: 30px; height: 30px; line-height: 28px; border: 2px solid #333; border-radius: 50%; font-size: 16px; margin: 0px 5px 0px 0px; position: relative; bottom: 3px; }
+.how-it-works .content .box .info p { line-height: 24px; }
+.how-it-works .content .box .info .img { text-align: center; }
+.how-it-works .content .box .info .img img { width: 200px; }
+.how-it-works .content .read-more { display: inline-block; text-align: center; width: 100%; margin: 50px 0px 100px 0px; }
+.how-it-works .content .read-more a { padding: 10px 15px; background-color: #919165; color: white; cursor: pointer; display: inline-block; }
 
 .home-container { margin: 0px auto; padding: 100px 100px 0px 100px; }
 .home-container .invest-content { padding: 0px 100px; display: inline-block; }
 .home-container .invest-content h1 { text-align: center; font-size: 42px; margin: 0px 0px 50px 0px; }
 .home-container .invest-content .invest-box { float: left; width: 50%; background-color: white; }
-.home-container .invest-content .invest-box:nth-child(3n - 1) { background-color: #f9f7f2; }
-.home-container .invest-content .invest-box .investment { padding: 80px 100px; }
+.home-container .invest-content .invest-box:nth-child(3n - 1) { background-color: #f9f9f9; }
+.home-container .invest-content .invest-box .investment { padding: 60px 100px; }
 .home-container .invest-content .invest-box .investment h2 { font-size: 28px; margin: 0px 0px 10px 0px; }
 .home-container .invest-content .invest-box .investment p { height: 180px; }
 .home-container .invest-content .investment .invest-info { width: 60%; float: left; line-height: 24px; } 
 .home-container .invest-content .investment .invest-img { width: 40%; float: left; text-align: center; }
 .home-container .invest-content .investment .invest-img img { position: relative; bottom: 30px; left: 50px; }
 
-.app-container { width: 100%; }
+.app-container { width: 100%; background-color: white; }
 .app-container .app-content { padding: 100px 200px; display: inline-block;}
 .app-container .app-info { width: 50%; float: left; }
 .app-container .app-info .info { padding: 80px 100px; width: 60% }

@@ -1,16 +1,17 @@
-<nav>
-    <ul>
-        <li>
-            <h1>City Farmers</h1>
-        </li>
-        <li>
-            <a routerLink="/">home</a>
-        </li>
-        <li>
-            <a routerLink="/farmers">farmers</a>
-        </li>
-        <li>
-            <a routerLink="/contact">contact</a>
-        </li>
-    </ul>
-</nav>
+<div class="menu-container">
+    <div class="menu-content">
+        <h2><a routerLink="/">City Farmers</a></h2>
+        <ul class="farmer">
+            <li class="farmer-img"><a routerLink="/farmer"><img src="/assets/img/{{farmerId}}.png"></a></li>
+            <li><a routerLink="/farmer">{{ farmerName }}</a></li>
+        </ul>
+        <ul class="menu">
+            <li><a routerLink="/">home</a></li>
+            <li><a routerLink="/farmers">farmers</a></li>
+            <li><a routerLink="/farms">farms</a></li>
+            <li><a routerLink="/">products</a></li>
+            <li><a routerLink="/contact">contact</a></li>
+            <li (click)="logOut()">log out</li>
+        </ul>
+    </div>
+</div>

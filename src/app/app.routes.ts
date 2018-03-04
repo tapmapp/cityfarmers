@@ -8,6 +8,7 @@ import { FarmerInfoComponent } from './components/farmer-info';
 import { FarmsComponent } from './components/farms';
 import { FarmInfoComponent } from './components/farm-info';
 import { HomeComponent } from './components/home';
+import { HowItWorksComponent } from './components/how-it-works';
 import { LoginComponent } from './components/login';
 import { FarmComponent } from './components/farm';
 
@@ -23,5 +24,6 @@ export const ROUTES: Routes = [
   { path: 'farmers/:farmerId', component: FarmerInfoComponent, canActivate: [AuthGuardService] },
   { path: 'farm/:farmId', component: FarmComponent, canActivate: [AuthGuardService] },
   { path: 'farms', component: FarmsComponent, canActivate: [AuthGuardService] },
-  { path: 'farms/:farmId', component: FarmInfoComponent, canActivate: [AuthGuardService] }
+  { path: 'farms/:farmId', component: FarmInfoComponent, canActivate: [AuthGuardService] },
+  { path: 'how-it-works', component: HowItWorksComponent }
 ];

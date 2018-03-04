@@ -23,6 +23,7 @@ import { FarmsComponent } from './components/farms';
 import { FarmerInfoComponent } from './components/farmer-info';
 import { FooterComponent } from './components/footer';
 import { HeaderComponent } from './components/header';
+import { HowItWorksComponent } from './components/how-it-works';
 import { HomeComponent } from './components/home';
 import { HomeNavComponent } from './components/home-nav';
 import { LoginComponent } from './components/login';
@@ -60,6 +61,7 @@ import '../assets/css/styles.css';
     FarmerInfoComponent,
     FooterComponent,
     HeaderComponent,
+    HowItWorksComponent,
     HomeComponent,
     HomeNavComponent,
     LoginComponent,

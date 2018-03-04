@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// LOCAL STORAGE
+import { LocalStorageService } from 'angular-2-local-storage';
+
 @Component({
   selector: 'home-nav-app',
   providers: [],
@@ -8,6 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeNavComponent {
 
-  constructor() {}
+  farmerName: string;
+  farmerId: string;
+
+  constructor(private localStorage: LocalStorageService) {
+    this.farmerName = this.localStorage.get('farmerName').toString();
+    this.farmerId = this.localStorage.get('farmerId').toString();
+  }
 
 }

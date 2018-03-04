@@ -1,4 +1,4 @@
-.footer-container { display: inline-block; width: 100%; }
+.footer-container { background-image: url('/assets/img/wood-texture.jpg'); }
 .footer-container .footer-content { padding: 0px 100px; height: 340px; }
 .footer-container ul { width: 22%; float: left; }
 .footer-container .logo { width: 34%}

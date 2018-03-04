@@ -1,17 +1,10 @@
-nav { color: #333; height: 50px; }
-nav ul { margin: 0px auto; width: 1080px; }
-nav ul li { font-size: 14px; font-weight: normal; float: left; line-height: 80px; margin: 0px 50px 0px 0px; cursor: pointer; }
-nav ul li h1 { line-height: 80px; margin: 0px; font-size: 24px; }
-nav ul li a { font-weight: normal; color: #333; }
-
-.home-container { margin: 50px auto; width: 1080px; }
-.home-container .home-content { width: 40%; float: left; padding: 0px 140px 40px 0px; }
-.home-container .home-content .content { margin: 0px 0px 50px 0px; }
-.home-container .donation-content { float: left; padding: 0px 50px 0px 0px; width: 30%; }
-.home-container p { font-size: 14px; margin: 18px 0px; line-height: 21px; }
-
-a { color: #9a0000; font-size: 14px; font-weight: bold; }
-
-input { width: 200px; line-height: 28px; padding: 0px 10px; margin: 5px 0px 10px 0px; }
-.alert { display: none; }
-.alert.active { display: inherit; }
+.menu-container { padding: 20px 100px; }
+.menu-container .menu-content { display: inline-block; width: 100%; }
+.menu-container .menu-content h2 a { font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
+.menu-container .menu-content .menu a { color: #929265; }
+.menu-container .menu-content h2 { font-size: 28px; margin: 0px; color: #929265; font-family: 'Josefin Slab', serif; float: left; padding: 0px 30px 0px 0px; line-height: 60px; }
+.menu-container .menu-content .farmer { margin: 0px; color: #e0e0c9; font-size: 12px; font-weight: normal; letter-spacing: 2px; float: left; }
+.menu-container .menu-content .farmer li { line-height: 60px; float: left; color: #929265; padding: 0px 15px 0px 0px; }
+.menu-container .menu-content .farmer .farmer-img img { position: relative; top: 10px; width: 42px; border-radius: 50%; }
+.menu-container .menu-content .menu { margin: 0px; color: #e0e0c9; font-size: 12px; font-weight: normal; letter-spacing: 1px; float: right; }
+.menu-container .menu-content .menu li { line-height: 60px; float: left; color: #929265; padding: 0px 38px 0px 0px; cursor:pointer; font-size: 14px; }
