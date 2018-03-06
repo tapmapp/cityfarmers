@@ -1,4 +1,4 @@
-.menu-container { width: 100%; background-color: #fffdf6; height: 60px; }
+.menu-container { width: 100%; height: 60px; }
 .menu-container h2 a { font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
 .menu-container .menu a { color: #929265; }
 .menu-container h2 { margin: 0px; color: #929265; font-family: 'Josefin Slab', serif; float: left; padding: 0px 30px; line-height: 60px; }

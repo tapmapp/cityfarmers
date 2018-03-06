@@ -1,4 +1,7 @@
 @media (min-width: 900px) and (max-width: 1440px) {
     .home-container .invest-content { padding: 0px 0px; }
     .app-container .app-info .info { padding: 80px 0px; width: 80%; }
+
+    .how-it-works .content { padding: 0px 0px; }
+
 }
