@@ -2,13 +2,25 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.farms-container { padding: 50px 100px; height: calc(100vh - 60px); }
+.farms-container { padding: 50px 100px 100px 100px; min-height: calc(100vh - 262px); }
+.farms-container .farms { background-color: white; min-height: calc(100vh - 460px); padding: 100px 100px; overflow: hidden; }
+
+.farms-container .farms .product-list { width: 20%; float: left; height: 100%; }
+.farms-container .farms .product-list .product { width: 100%; display: inline-block; margin: 0px 0px 15px 0px; cursor: pointer; }
+.farms-container .farms .product-list .product img { float: left; width: 50px; margin: 0px 15px 0px 0px; }
+.farms-container .farms .product-list .product h2 { float: left; margin: 15px 0px 0px 0px; font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
+
+.farms-container .farms .farms-list { width: 40%; float: left; height: 100%; }
+.farms-container .farms .farmers-list { width: 40%; float: left; height: 100%; }
+
 .farms-container h1 { margin: 0px 0px 30px 0px; }
-.farms-container .farm-container { width: 30%; float: left; background-color: #f7f5ee; margin: 0px 5% 50px 0px; cursor: pointer;}
+.farms-container .farm-container { cursor: pointer;}
 .farms-container .farm-container:nth-child(3n) { margin: 0px 0px 30px 0px; }
-.farms-container .farm-container .farm { padding: 25px 30px 0px 20px;  font-family: Georgia, 'Times New Roman', Times, serif; overflow: hidden;}
-.farms-container .farm-container .farm .fruit { width: 80px; position: relative; bottom: 12px; float: left; }
-.farms-container .farm-container .farm h2 { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px 10px 0px; font-size: 18px; color: #333;  font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
+.farms-container .farm-container .farm { padding: 15px 20px 15px 20px; font-family: Georgia, 'Times New Roman', Times, serif; overflow: hidden; border-top: 1px solid #eae9e3; }
+.farms-container a { display: block; padding: 0px 0px 0px 100px; }
+.farms-container a:last-child .farm-container .farm { border-bottom: 1px solid #eae9e3; }
+.farms-container .farm-container .farm .fruit { width: 80px; float: left; margin: 0px 15px 0px 0px; }
+.farms-container .farm-container .farm h2 { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 10px 0px 15px 0px; font-size: 24px; color: #333; font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
 .farms-container .farm-container .farm h2 span { float: right; display: inline-block; font-size: 12px; line-height: 24px; }
 .farms-container .farm-container .farm h2 span img {float: left; width: initial; height: auto; margin: 0px 5px 0px 0px; width: 13px; position: relative; top: 6px;}
 .farms-container .farm-container .farm ul { float: left; width: 60%; padding: 0px 0px 0px 20px; margin: 0px 0px; }

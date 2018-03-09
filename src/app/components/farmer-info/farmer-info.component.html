@@ -6,38 +6,40 @@
 </div>
 
 <div class="farmer-info-container" *ngIf="farmer">
-    <div class="farmer-info">
-        <img src="/assets/img/{{ farmer.img }}"/>
-        <h1>{{ farmer.name }}</h1>
-        <ul>
-            <li><span><i class="fa fa-map-marker" aria-hidden="true"></i></span> {{ farmer.city }}, {{ farmer.country }}</li>
-            <li><span><i class="fa fa-home" aria-hidden="true"></i></span> {{ farmer.farm.length }} farms</li>
-            <li><span><img src="/assets/img/weight.png"/></span> Harvest: {{ farmer.farm.length.toFixed(2) }} kg</li>
-            <li><span><i class="fa fa-money" aria-hidden="true"></i></span> Investment: 100 €</li>
-        </ul>
-    </div>
-    <div class="farmer-content">
-        <h1>Farms</h1>
-        <a [routerLink]="['/farms', farm._id]" *ngFor="let farm of farmer.farm">
-            <div class="farm-container">
-                <div class="farm">
-                    <img src="/assets/img/{{ farm.img }}"/>
-                    <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
-                    <ul>
-                        <li>
-                            <i class="fa fa-users" aria-hidden="true"></i> {{ farm.farmer.length }}
-                        </li>
-                        <li>
-                            <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
-                        </li>
-                        <li>
-                            <i class="fa fa-calendar" aria-hidden="true"></i> {{ farm.harvest }} days
-                        </li>
-                        
-                    </ul>
+    <div class="farmer">
+        <div class="farmer-info">
+            <img src="/assets/img/{{ farmer.img }}"/>
+            <h1>{{ farmer.name }}</h1>
+            <ul>
+                <li><span><i class="fa fa-map-marker" aria-hidden="true"></i></span> {{ farmer.city }}, {{ farmer.country }}</li>
+                <li><span><i class="fa fa-home" aria-hidden="true"></i></span> {{ farmer.farm.length }} farms</li>
+                <li><span><img src="/assets/img/weight.png"/></span> Harvest: {{ farmer.farm.length.toFixed(2) }} kg</li>
+                <li><span><i class="fa fa-money" aria-hidden="true"></i></span> Investment: 100 €</li>
+            </ul>
+        </div>
+        <div class="farmer-content">
+            <h1>Farms</h1>
+            <a [routerLink]="['/farms', farm._id]" *ngFor="let farm of farmer.farm">
+                <div class="farm-container">
+                    <div class="farm">
+                        <img src="/assets/img/{{ farm.img }}"/>
+                        <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
+                        <ul>
+                            <li>
+                                <i class="fa fa-users" aria-hidden="true"></i> {{ farm.farmer.length }}
+                            </li>
+                            <li>
+                                <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ farm.harvest }} days
+                            </li>
+                            
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 <footer-app></footer-app>

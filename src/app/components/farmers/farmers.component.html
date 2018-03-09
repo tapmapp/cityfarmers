@@ -5,25 +5,27 @@
     </div>
 </div>
 <div class="farmers-container">
-    <h1>Farmers</h1>
-    <a [routerLink]="['/farmers', farmer._id]"  *ngFor="let farmer of farmers">
-        <div class="farmer-container">
-            <div class="farmer"> 
-                <img src="/assets/img/{{farmer.img}}" class="fruit"/>
-                <h2>{{ farmer.name }}</h2>
-                <ul>
-                    <li>
-                        <i class="fa fa-home" aria-hidden="true"></i> {{ farmer.farm.length }} farms
-                    </li>
-                    <li>
-                        <img src="/assets/img/weight.png"/> 55 kg
-                    </li>
-                    <li>
-                        <i class="fa fa-money" aria-hidden="true"></i> 100 €
-                    </li>
-                </ul>
+    <div class="farmers">
+        <h1>Farmers</h1>
+        <a [routerLink]="['/farmers', farmer._id]"  *ngFor="let farmer of farmers">
+            <div class="farmer-container">
+                <div class="farmer"> 
+                    <img src="/assets/img/{{farmer.img}}" class="fruit"/>
+                    <h2>{{ farmer.name }}</h2>
+                    <ul>
+                        <li>
+                            <i class="fa fa-home" aria-hidden="true"></i> {{ farmer.farm.length }} farms
+                        </li>
+                        <li>
+                            <img src="/assets/img/weight.png"/> 55 kg
+                        </li>
+                        <li>
+                            <i class="fa fa-money" aria-hidden="true"></i> 100 €
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
 <footer-app></footer-app>

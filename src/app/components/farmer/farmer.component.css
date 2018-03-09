@@ -2,7 +2,7 @@
 .loader-container.active { display: table; }
 .loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
 
-.profile-container { padding: 50px 100px; }
+.profile-container { padding: 50px 100px; background-color: #fffdf6; height: calc(100vh - 160px); }
 .profile-container .farmer-info { font-family: 'Josefin Slab', serif; float: left; width: 25%; }
 .profile-container .farmer-info .img { margin: 0px 0px 30px 0px; }
 .profile-container .farmer-info .info { padding: 0px 60px; color: #929265; line-height: 24px; font-size: 18px; font-weight: bold; }

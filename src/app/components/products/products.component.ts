@@ -2,20 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
-  selector: 'contact',
+  selector: 'products',
   providers: [],
-  styleUrls: [ './contact.component.css', 'contact-resp.component.css' ],
-  templateUrl: './contact.component.html'
+  styleUrls: [ './products.component.css', 'products-resp.component.css' ],
+  templateUrl: './products.component.html'
 })
-export class ContactComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
   loaderStatus: Boolean = true;
 
   constructor() {}
 
   ngOnInit() {
-
+    
     this.loaderStatus = false;
+
   }
 
 }

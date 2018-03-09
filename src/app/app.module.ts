@@ -28,6 +28,7 @@ import { HomeComponent } from './components/home';
 import { HomeNavComponent } from './components/home-nav';
 import { LoginComponent } from './components/login';
 import { SocketComponent } from './components/socket';
+import { ProductsComponent } from './components/products';
 
 // SERVICES
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
@@ -65,7 +66,8 @@ import '../assets/css/styles.css';
     HomeComponent,
     HomeNavComponent,
     LoginComponent,
-    SocketComponent
+    SocketComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

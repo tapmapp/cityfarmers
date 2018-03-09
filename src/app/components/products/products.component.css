@@ -1,0 +1,29 @@
+.loader-container { height: calc(100vh - 64px); display: none; position: absolute; z-index: 1000; width: 100%; background-color: #fffdf6; }
+.loader-container.active { display: table; }
+.loader-container .loader { display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center; z-index: 100; }
+
+.products-container { padding: 50px 100px 100px 100px; }
+.products-container h1 { margin: 0px 0px 30px 100px;  }
+.products-container .products { padding: 100px 100px; background-color: white; }
+.products-container .products .product { width: 100%; overflow: hidden; margin: 0px 0px 100px 0px; }
+.products-container .products .product:last-child { margin: 0px; }
+.products-container .products .product .product-img { width: 20%; float: left; }
+.products-container .products .product .info-container { float: left; width: 50%;  }
+.products-container .products .product .info-container .info { padding: 25px 0px 0px 100px; }
+.products-container .products .product .info-container .info h2 { font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; font-size: 36px; margin: 25px 0px 0px 0px; }
+.products-container .products .product .info-container .info p { font-size: 14px; color: #555; line-height: 21px; }
+.products-container .products .product .info-container .info .farm-info { font-size: 12px; margin: 25px 0px 0px 0px; }
+.products-container .products .product .info-container .info .farm-info li { float: left; padding: 0px 30px 0px 0px;}
+
+.products-container .products .product .involved-container { width: 25%; float: right; }
+.products-container .products .product .involved-container h2 { padding: 25px 0px 0px 100px; }
+.products-container .products .product .involved-container .involved { padding: 0px 0px 0px 100px; height: 250px; overflow-y: scroll;}
+.products-container .products .product .involved-container .involved ul { margin: 0px; overflow: hidden; padding: 10px 10px 5px 10px; border-top: 1px solid #e8e5d7; cursor: pointer; }
+.products-container .products .product .involved-container .involved ul:last-child { border-bottom: 1px solid #e8e5d7; }
+.products-container .products .product .involved-container .involved ul:hover { background-color: #fbf9f3; }
+.products-container .products .product .involved-container .involved ul li { float: left; }
+.products-container .products .product .involved-container .involved ul .farmer-img { width: 50px; margin: 0px 15px 0px 0px; }
+.products-container .products .product .involved-container .involved ul .farmer-img img { width: 100%;  }
+.products-container .products .product .involved-container .involved ul .farmer-info { margin: 5px 0px 0px 0px; }
+.products-container .products .product .involved-container .involved ul li .location { font-size: 12px; }
+.products-container .products .product .product-img img { width: 100%; }

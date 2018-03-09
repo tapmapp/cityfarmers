@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home';
 import { HowItWorksComponent } from './components/how-it-works';
 import { LoginComponent } from './components/login';
 import { FarmComponent } from './components/farm';
+import { ProductsComponent } from './components/products';
 
 // AUTH GARD SERVICE
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
@@ -25,5 +26,6 @@ export const ROUTES: Routes = [
   { path: 'farm/:farmId', component: FarmComponent, canActivate: [AuthGuardService] },
   { path: 'farms', component: FarmsComponent, canActivate: [AuthGuardService] },
   { path: 'farms/:farmId', component: FarmInfoComponent, canActivate: [AuthGuardService] },
-  { path: 'how-it-works', component: HowItWorksComponent }
+  { path: 'how-it-works', component: HowItWorksComponent },
+  { path: 'products', component: ProductsComponent }
 ];

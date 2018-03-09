@@ -5,62 +5,69 @@
     </div>
 </div>
 <div class="farm-info-container" *ngIf="farm">
-    <div class="farm-info">
-        <img src="/assets/img/{{ farm.img }}"/>
-        <h1>{{ farm.name }}</h1>
-        <ul>
-            <li>
-                <span><img src="/assets/img/seeds.png"/></span> {{ farm.created | date: "dd/MM/yy" }}
-            </li>
-            <li>
-                <span><i class="fa fa-users" aria-hidden="true"></i></span> {{ farm.farmer.length }} farmer
-            </li>
-            <li>
-                <span><img src="/assets/img/weight.png"/></span> {{ farm.avgWeight }} kg
-            </li>
-            <li class="harvest">
-                <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ farm.harvest }} days
-            </li>
-            <li>
-                <span><i class="fa fa-refresh" aria-hidden="true"></i></span> Financing
-            </li>
-        </ul>
+    <div class="farm">
+
+        <div class="farm-info">
+            <img src="/assets/img/{{ farm.img }}"/>
+            <h1>{{ farm.name }}</h1>
+            <ul>
+                <li>
+                    <span><img src="/assets/img/seeds.png"/></span> {{ farm.created | date: "dd/MM/yy" }}
+                </li>
+                <li>
+                    <span><i class="fa fa-users" aria-hidden="true"></i></span> {{ farm.farmer.length }} farmer
+                </li>
+                <li>
+                    <span><img src="/assets/img/weight.png"/></span> {{ farm.avgWeight }} kg
+                </li>
+                <li class="harvest">
+                    <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ farm.harvest }} days
+                </li>
+                <li>
+                    <span><i class="fa fa-refresh" aria-hidden="true"></i></span> Financing
+                </li>
+            </ul>
+        </div>
+        <div class="farm-content">
+            <h1>Farmers</h1>
+            <a [routerLink]="['/farmers', farmer._id]" *ngFor="let farmer of farm.farmer">
+                <div class="farmer-container">
+                    <div class="farmer">
+                        <img src="/assets/img/{{farmer.img}}"/>
+                        <h3>{{ farmer.name }}</h3>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ farmer.city }}, {{ farmer.country }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="farm-status">
+            <h1>Farm status</h1>
+            <ul class="completed">
+                <li>
+                    <span class="percent">60%</span>
+                    <br/>
+                    <span class="completed">Completed</span>
+                </li>
+            </ul>
+            <ul class="invest">
+                <li><input type="number"/><span class="btn">Invest</span></li>
+                <li class="eth-price">1 ETH = 1400.86 €</li>
+            </ul>
+            <h2>Costs</h2>
+            <ul class="costs">
+                <li>Total cost: 300$ - 0.54 ETH</li>
+                <li>Total left: 20.24$ - 0.12 ETH</li>
+            </ul>
+            <ul class="costs-list">
+                <li><i class="fa fa-check" aria-hidden="true"></i> Electricity</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Water</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Fertilizers</li>
+                <li><i class="fa fa-times" aria-hidden="true"></i> Hardware</li>
+                <li><i class="fa fa-times" aria-hidden="true"></i> Rent</li>
+            </ul>
+        </div>
+
     </div>
-    <div class="farm-content">
-        <h1>Farmers</h1>
-        <a [routerLink]="['/farmers', farmer._id]" *ngFor="let farmer of farm.farmer">
-            <div class="farmer">
-                <img src="/assets/img/{{farmer.img}}"/>
-                <h3>{{ farmer.name }}</h3>
-                <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ farmer.city }}, {{ farmer.country }}</p>
-            </div>
-        </a>
-    </div>
-    <div class="farm-status">
-        <h1>Farm status</h1>
-        <ul class="completed">
-            <li>
-                <span class="percent">60%</span>
-                <br/>
-                <span class="completed">Completed</span>
-            </li>
-        </ul>
-        <ul class="invest">
-            <li><input type="number"/><span class="btn">Invest</span></li>
-            <li class="eth-price">1 ETH = 1400.86 €</li>
-        </ul>
-        <h2>Costs</h2>
-        <ul class="costs">
-            <li>Total cost: 300$ - 0.54 ETH</li>
-            <li>Total left: 20.24$ - 0.12 ETH</li>
-        </ul>
-        <ul class="costs-list">
-            <li><i class="fa fa-check" aria-hidden="true"></i> Electricity</li>
-            <li><i class="fa fa-check" aria-hidden="true"></i> Water</li>
-            <li><i class="fa fa-check" aria-hidden="true"></i> Fertilizers</li>
-            <li><i class="fa fa-times" aria-hidden="true"></i> Hardware</li>
-            <li><i class="fa fa-times" aria-hidden="true"></i> Rent</li>
-        </ul>
-    </div>
+
 </div>
 <footer-app></footer-app>

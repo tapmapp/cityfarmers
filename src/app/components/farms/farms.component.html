@@ -5,31 +5,58 @@
     </div>
 </div>
 <div class="farms-container">
-    <h1>Farms</h1>
-    <a [routerLink]="['/farms', farm._id]" *ngFor="let farm of farms">
-        <div class="farm-container" >
-            <div class="farm">
-                <img src="/assets/img/{{farm.img}}" class="fruit"/>
-                <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
-                <ul>
-                    <li>
-                        <i class="fa fa-users" aria-hidden="true"></i> {{ farm.farmer.length }}
-                    </li>
-                    <li>
-                        <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
-                    </li>
-                    <li>
-                        <i class="fa fa-calendar" aria-hidden="true"></i> {{ farm.harvest }} days
-                    </li>
-                </ul>
-                <!--
-                <ul class="process">
-                    <li>
-                        Status: On Process
-                    </li>
-                </ul>-->
+    <div class="farms">
+
+        <div class="product-list">
+            <div class="product">
+                <img src="/assets/img/salanova-1.png"/>
+                <h2>Salanova Green</h2>
+            </div>
+            <div class="product">
+                <img src="/assets/img/salanova-2.png"/>
+                <h2>Salanova Red</h2>
+            </div>
+            <div class="product">
+                <img src="/assets/img/salatrio.png"/>
+                <h2>Salatrio</h2>
             </div>
         </div>
-    </a>
+
+        <div class="farms-list">
+            <!--<h2>Farms</h2>-->
+            <a [routerLink]="['/farms', farm._id]" *ngFor="let farm of farms">
+                <div class="farm-container" >
+                    <div class="farm">
+                        <img src="/assets/img/{{farm.img}}" class="fruit"/>
+                        <h2>{{ farm.name }} <span> <img src="/assets/img/seeds.png"/> {{ farm.created | date: "dd/MM/yy" }}</span></h2>
+                        <ul>
+                            <li>
+                                <i class="fa fa-users" aria-hidden="true"></i> {{ farm.farmer.length }}
+                            </li>
+                            <li>
+                                <img src="/assets/img/weight.png"/> {{ farm.avgWeight }} kg
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ farm.harvest }} days
+                            </li>
+                        </ul>
+                        <!--
+                        <ul class="process">
+                            <li>
+                                Status: On Process
+                            </li>
+                        </ul>-->
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="farmers-list">
+            <h2>Farmers</h2>
+        </div>
+
+        
+
+    </div>
 </div>
 <footer-app></footer-app>

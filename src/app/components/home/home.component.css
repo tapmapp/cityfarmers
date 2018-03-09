@@ -1,18 +1,20 @@
-.slider-container { margin: 0px auto 0px auto; background-color: #f9f7f3; height: calc(100vh - 105px); }
-.slider-container .slider-content { padding: 50px 200px; }
+.slider-container { margin: 0px auto 0px auto; height: 40vh; }
+.slider-container .slider-content { height: 100%; padding: 50px 200px; background-color: #fff; }
+/*.slider-container .slider-content { height: 100%; padding: 50px 200px; background-image: url('/assets/img/slider-1-background.jpg'); background-repeat: no-repeat; background-size: 100%; background-position: center;  }*/
 .slider-container .slider-content .slider-info { width: 55%; float: left; } 
-.slider-container .slider-content .slider-info .info h1 { font-size: 42px; }
-.slider-container .slider-content .slider-info .info h3 { line-height: 24px;  }
-.slider-container .slider-content .slider-info .info .become-farmer { padding: 10px 15px; color: white; background-color: #919165; float: right; margin: 30px 0px 0px 0px; cursor: pointer; }
+.slider-container .slider-content .slider-info .info h1 { font-size: 42px; width: 75%; font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold }
+.slider-container .slider-content .slider-info .info h3 { line-height: 24px; width: 70%; color: #555; }
+.slider-container .slider-content .slider-info .info .become-farmer { padding: 10px 15px; color: white; background-color: #919165; float: right; margin: 30px 70px 0px 0px; cursor: pointer; }
 .slider-container .slider-content .slider-img { width: 40%; float: left; }
 
 .how-it-works{ margin: 0px auto; padding: 100px 85px 0px 85px; }
 .how-it-works .content { display: inline-block; padding: 0px 100px; }
-.how-it-works .content h1 { text-align: center; font-size: 42px; margin: 0px 0px 50px 0px; }
+.how-it-works .content h1 { text-align: center; font-size: 48px; margin: 100px 0px 50px 0px; font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
 .how-it-works .content .box { width: 33.3%; float: left; }
 .how-it-works .content .box .info { padding: 30px 50px 80px 50px; margin: 0px 15px 0px 15px; height: 380px; background-color: white; }
-.how-it-works .content .box .info h2 span { text-align: center;display: inline-block; width: 30px; height: 30px; line-height: 28px; border: 2px solid #333; border-radius: 50%; font-size: 16px; margin: 0px 5px 0px 0px; position: relative; bottom: 3px; }
-.how-it-works .content .box .info p { line-height: 24px; }
+.how-it-works .content .box .info h2 { font-family: 'Josefin Slab', serif; color: #555; font-weight: bold; font-size: 32px;}
+.how-it-works .content .box .info h2 span { text-align: center; display: inline-block; width: 30px; height: 30px; line-height: 32px; border: 2px solid #555; border-radius: 50%; font-size: 16px; margin: 0px 5px 0px 0px; position: relative; bottom: 5px; }
+.how-it-works .content .box .info p { line-height: 24px; color: #555; }
 .how-it-works .content .box .info .img { text-align: center; }
 .how-it-works .content .box .info .img img { width: 200px; }
 .how-it-works .content .read-more { display: inline-block; text-align: center; width: 100%; margin: 50px 0px 100px 0px; }
@@ -20,12 +22,12 @@
 
 .home-container { margin: 0px auto; padding: 0px 100px 100px 100px; }
 .home-container .invest-content { padding: 0px 100px; display: inline-block; }
-.home-container .invest-content h1 { text-align: center; font-size: 42px; margin: 0px 0px 50px 0px; }
+.home-container .invest-content h1 { text-align: center; font-size: 48px; margin: 50px 0px 50px 0px; font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
 .home-container .invest-content .invest-box { float: left; width: 50%; background-color: white; }
 .home-container .invest-content .invest-box:nth-child(3n - 1) { background-color: #f9f7f4; }
 .home-container .invest-content .invest-box .investment { padding: 60px 100px; }
-.home-container .invest-content .invest-box .investment h2 { font-size: 28px; margin: 0px 0px 10px 0px; }
-.home-container .invest-content .invest-box .investment p { height: 180px; }
+.home-container .invest-content .invest-box .investment h2 { font-family: 'Josefin Slab', serif; color: #555; font-weight: bold; font-size: 32px; margin: 0px 0px 10px 0px; }
+.home-container .invest-content .invest-box .investment p { height: 180px; color: #555; }
 .home-container .invest-content .investment .invest-info { width: 60%; float: left; line-height: 24px; } 
 .home-container .invest-content .investment .invest-img { width: 40%; float: left; text-align: center; }
 .home-container .invest-content .investment .invest-img img { position: relative; bottom: 30px; left: 50px; }
@@ -34,5 +36,6 @@
 .app-container .app-content { padding: 100px 200px; display: inline-block;}
 .app-container .app-info { width: 50%; float: left; }
 .app-container .app-info .info { padding: 80px 100px; width: 60% }
-.app-container .app-info .info p { width: 80%; line-height: 24px; }
+.app-container .app-info .info h1 { font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; font-size: 42px; }
+.app-container .app-info .info p { width: 80%; line-height: 24px; color: #555; }
 .app-container .app-img { width: 50%; float: left; text-align: center; }
