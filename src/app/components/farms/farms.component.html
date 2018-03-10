@@ -52,7 +52,15 @@
         </div>
 
         <div class="farmers-list">
-            <h2>Farmers</h2>
+            <a [routerLink]="['/farmers', farmer._id]"  *ngFor="let farmer of farmers">
+                <div class="farmer-container">
+                    <div class="farmer"> 
+                        <img src="/assets/img/{{farmer.img}}" class="fruit"/>
+                        <h3>{{ farmer.name }}</h3>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ farmer.city }}, {{ farmer.country }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
 
         

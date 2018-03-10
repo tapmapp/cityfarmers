@@ -10,13 +10,11 @@
 .farms-container .farms .product-list .product img { float: left; width: 50px; margin: 0px 15px 0px 0px; }
 .farms-container .farms .product-list .product h2 { float: left; margin: 15px 0px 0px 0px; font-family: 'Josefin Slab', serif; color: #929265; font-weight: bold; }
 
-.farms-container .farms .farms-list { width: 40%; float: left; height: 100%; }
-.farms-container .farms .farmers-list { width: 40%; float: left; height: 100%; }
-
 .farms-container h1 { margin: 0px 0px 30px 0px; }
 .farms-container .farm-container { cursor: pointer;}
 .farms-container .farm-container:nth-child(3n) { margin: 0px 0px 30px 0px; }
 .farms-container .farm-container .farm { padding: 15px 20px 15px 20px; font-family: Georgia, 'Times New Roman', Times, serif; overflow: hidden; border-top: 1px solid #eae9e3; }
+
 .farms-container a { display: block; padding: 0px 0px 0px 100px; }
 .farms-container a:last-child .farm-container .farm { border-bottom: 1px solid #eae9e3; }
 .farms-container .farm-container .farm .fruit { width: 80px; float: left; margin: 0px 15px 0px 0px; }
@@ -27,6 +25,17 @@
 .farms-container .farm-container .farm ul li { float: left; width: 33.3%; font-size: 12px; }
 .farms-container .farm-container .farm ul li img { width: 12px; height: auto; margin: 0px 5px 0px 0px; float: left; }
 .farms-container .farm-container .farm ul li:last-child { text-align: right; }
+
+.farms-container .farms .farms-list { width: 40%; float: left; height: 100%; }
+.farms-container .farms .farmers-list { width: 40%; float: left; height: 100%; }
+
+.farmers-list a { display: block; padding: 0px 0px 0px 100px; }
+.farmers-list a:last-child .farmer-container .farmer { border-bottom: 1px solid #eae9e3; }
+.farmer-container .farmer { padding: 15px 20px 15px 20px; font-family: Georgia, 'Times New Roman', Times, serif; overflow: hidden; border-top: 1px solid #eae9e3; }
+.farmer-container .farmer:nth-child(3n) { margin: 0px 0px 30px 0px; } 
+.farmer-container .farmer .fruit { width: 80px; float: left; margin: 0px 20px 0px 0px; }
+.farmer-container .farmer h3 { margin: 18px 0px 7px 0px; font-size: 21px; color: #333; font-weight: normal; font-family: Georgia, 'Times New Roman', Times, serif; }
+.farmer-container .farmer p { margin: 0px 0px; font-size: 14px; }
 
 .farms-container .farm-container .farm .process { width: 60%; margin: 7px 0px 0px 0px;} 
 .farms-container .farm-container .farm .process li { width: 100%; } 

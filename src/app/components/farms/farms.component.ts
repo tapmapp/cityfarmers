@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import * as io from 'socket.io-client';
 
 // LOCAL STORAGE
 import { LocalStorageService } from 'angular-2-local-storage';
@@ -8,14 +7,11 @@ import { LocalStorageService } from 'angular-2-local-storage';
 // SERVICES
 import { ChartService } from '../../services/chart/chart.service';
 import { FarmService } from '../../services/farm/farm.service';
-import { NoteService } from '../../services/note/note.service';
 
 // INTERFACES
 import { Farm } from '../../interfaces/farm'; 
 import { Farmer } from '../../interfaces/farmer'; 
 import { FarmerService } from '../../services/farmer/farmer.service';
-import { SocketService } from '../../services/socket/socket.service';
-import { Environment } from '../../interfaces/environment';
 
 @Component({
   selector: 'farms',
@@ -25,21 +21,21 @@ import { Environment } from '../../interfaces/environment';
 })
 export class FarmsComponent implements OnInit {
 
-  socket: SocketIOClient.Socket;
-
   farms: Array<Farm> = [];
+  farmers: Array<Farmer> = [];
 
   loaderStatus: Boolean = true;
 
   // SUBSCRIBERS
 
   farmsData: Observable<Array<Farm>>;
-  socketData: Observable<any>;
+  farmersData: Observable<Array<Farmer>>;
+
 
   constructor(
     private localStorage: LocalStorageService,
     private farmService: FarmService,
-    private socketService: SocketService) {}
+    private farmerService: FarmerService) {}
 
   ngOnInit() {
 
@@ -54,13 +50,17 @@ export class FarmsComponent implements OnInit {
 
     });
 
-    // SOCKET SUBSCRIBER
-    this.socketData = this.socketService.environment;
-    this.socketData.subscribe(data => {
+    // FARMER SUBSCRIBER
+    this.farmersData = this.farmerService.farmers;
+    this.farmersData.subscribe(data => {
+
       if(data.length > 0) {
-        
-      } 
+        this.farmers = data;
+        this.loaderStatus = false;
+      }
+      
     });
+
 
   }
 
